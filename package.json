@@ -1,8 +1,8 @@
 {
-  "name": "staywoke-api",
+  "name": "police-scorecard-api",
   "version": "1.1.1",
-  "description": "StayWoke API",
-  "author": "StayWoke",
+  "description": "Police Scorecard API",
+  "author": "Police Scorecard",
   "license": "MIT",
   "private": false,
   "main": "index.js",
@@ -42,12 +42,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/staywoke/api.git"
+    "url": "git+https://github.com/policescorecard/api.git"
   },
   "bugs": {
-    "url": "https://github.com/staywoke/api/issues"
+    "url": "https://github.com/policescorecard/api/issues"
   },
-  "homepage": "https://github.com/staywoke/api#readme",
+  "homepage": "https://github.com/policescorecard/api#readme",
   "dependencies": {
     "@bugsnag/js": "^6.5.0",
     "@bugsnag/plugin-express": "^6.5.0",

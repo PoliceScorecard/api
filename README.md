@@ -6,10 +6,7 @@ This is the new home of the Police Scorecard API project.
 Using our API
 ---
 
-Our API is __[Fully Documented](https://api.staywoke.org/guide/)__ using Apiary. Currently, our API is only open for select non-commercial use.  If you are interested in obtaining an API Key ( required for access ), please contact [Peter Schmalfeldt](mailto:me@peterschmalfeldt.com) or [Join us on Slack](https://staywoke.slack.com).
-
-<img src="https://staywoke-github.s3.us-east-1.amazonaws.com/api/apiary.jpg" style="max-width: 100%;">
-
+Our API is __[Fully Documented](https://api.policescorecard.org/guide/)__ using Apiary. Currently, our API is only open for select non-commercial use.  If you are interested in obtaining an API Key ( required for access ), please contact [Peter Schmalfeldt](mailto:me@peterschmalfeldt.com).
 
 Developer Overview
 ---

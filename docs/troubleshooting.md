@@ -1,5 +1,3 @@
-![StayWoke Logo](https://staywoke-github.s3.us-east-1.amazonaws.com/common/logo.png "StayWoke Logo")
-
 **[↤ Developer Overview](../README.md)**
 
 Troubleshooting

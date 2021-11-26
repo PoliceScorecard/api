@@ -145,6 +145,141 @@ module.exports = (sequelize, DataTypes) => {
     },
     percentile_police_shootings_per_arrest: {
       type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    taser_2013: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    taser_2014: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    taser_2015: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    taser_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    taser_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    taser_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    taser_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    taser_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    taser_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    impact_weapons_and_projectiles_2013: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    impact_weapons_and_projectiles_2014: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    impact_weapons_and_projectiles_2015: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    impact_weapons_and_projectiles_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    impact_weapons_and_projectiles_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    impact_weapons_and_projectiles_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    impact_weapons_and_projectiles_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    impact_weapons_and_projectiles_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    impact_weapons_and_projectiles_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    neck_restraints_2013: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    neck_restraints_2014: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    neck_restraints_2015: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    neck_restraints_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    neck_restraints_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    neck_restraints_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    neck_restraints_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    neck_restraints_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    neck_restraints_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    chemical_spray_2013: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    chemical_spray_2014: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    chemical_spray_2015: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    chemical_spray_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    chemical_spray_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    chemical_spray_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    chemical_spray_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    chemical_spray_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    chemical_spray_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    K9_deployments_2013: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    K9_deployments_2014: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    K9_deployments_2015: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    K9_deployments_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    K9_deployments_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    K9_deployments_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    K9_deployments_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    K9_deployments_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    K9_deployments_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
     }
   }, {
     indexes: [

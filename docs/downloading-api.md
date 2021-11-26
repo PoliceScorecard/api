@@ -1,5 +1,3 @@
-![StayWoke Logo](https://staywoke-github.s3.us-east-1.amazonaws.com/common/logo.png "StayWoke Logo")
-
 **[↤ Developer Overview](../README.md)**
 
 Downloading API
@@ -9,7 +7,7 @@ You can download this API using the code below ( this assumes you have [SSH inte
 
 ```bash
 cd /path/to/api
-git clone git@github.com:staywoke/api.git .
+git clone git@github.com:policescorecard/api.git .
 npm install --build-from-resource --no-optional
 ```
 
