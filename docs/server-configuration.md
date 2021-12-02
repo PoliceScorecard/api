@@ -1,5 +1,3 @@
-![StayWoke Logo](https://staywoke-github.s3.us-east-1.amazonaws.com/common/logo.png "StayWoke Logo")
-
 **[↤ Developer Overview](../README.md)**
 
 Server Configuration
@@ -47,7 +45,7 @@ export API_INVITE_CAP=15;
 export API_INVITE_ONLY=true;
 export API_LOGZIO_DEBUG=true;
 export API_LOGZIO_TOKEN='CHANGE_ME';
-export API_LOGZIO_TYPE='StayWokeAPI';
+export API_LOGZIO_TYPE='PoliceScorecardAPI';
 export API_MANDRILL_API_KEY='CHANGE_ME';
 export API_NODE_ENV='local';
 export API_OPENSTATES_API_KEY='CHANGE_ME';

@@ -1,13 +1,9 @@
-![StayWoke Logo](https://staywoke-github.s3.us-east-1.amazonaws.com/common/logo.png "StayWoke Logo")
-
-__StayWoke__ is a community of learners, builders, and activists to create solutions to advance equity and justice in America.
-
 Thank you for Contributing
 ===
 
 We want to make it as easy as possible to contribute changes.
 
-Follow the requirements below for __[Creating Issues](https://github.com/staywoke/api/issues/new)__ and __[Pull Requests](https://github.com/staywoke/api/pull/new)__, to keep everything simple for everyone :)
+Follow the requirements below for __[Creating Issues](https://github.com/policescorecard/api/issues/new)__ and __[Pull Requests](https://github.com/policescorecard/api/pull/new)__, to keep everything simple for everyone :)
 
 ![OctoLiberty](https://octodex.github.com/images/octoliberty.png "OctoLiberty")
 
