@@ -102,13 +102,13 @@ module.exports = {
 
     if (!response.error) {
       response.attribution = {
-        text: 'Data Provided by StayWoke',
-        website: 'https://staywoke.org',
-        link: '<a href="https://staywoke.org">Data Provided by StayWoke</a>',
-        license: 'https://raw.githubusercontent.com/staywoke/api/master/LICENSE',
-        report_bug: 'https://github.com/staywoke/api/issues/new',
-        logo: 'https://cdn.staywoke.org/common/logo.png',
-        icon: 'https://cdn.staywoke.org/common/icon.png'
+        text: 'Data Provided by Police Scorecard',
+        website: 'https://policescorecard.org',
+        link: '<a href="https://policescorecard.org">Data Provided by Police Scorecard</a>',
+        license: 'https://raw.githubusercontent.com/policescorecard/api/master/LICENSE',
+        report_bug: 'https://github.com/policescorecard/api/issues/new',
+        logo: 'https://cdn.policescorecard.org/common/logo.png',
+        icon: 'https://cdn.policescorecard.org/common/icon.png'
       }
     }
 

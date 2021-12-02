@@ -360,7 +360,7 @@ app.get('*', (req, res) => {
     errors: [
       'The API Endpoint you are trying to access does not exist.',
       'Please view our Documentation for API Usage Instructions.',
-      'https://staywoke.docs.apiary.io/'
+      'https://policescorecard.docs.apiary.io/'
     ]
   })))
 })

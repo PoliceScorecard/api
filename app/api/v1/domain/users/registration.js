@@ -124,7 +124,7 @@ module.exports = {
     't1tties', 'teets', 'teez', 'testical', 'testicle', 'tit', 'titfuck', 'tits', 'titt', 'tittie5', 'tittiefucker',
     'titties', 'tittyfuck', 'tittywank', 'titwank', 'tosser', 'turd', 'tw4t', 'twat', 'twathead', 'twatty', 'twunt',
     'twunter', 'v14gra', 'v1gra', 'vagina', 'viagra', 'vulva', 'w00se', 'wang', 'wank', 'wanker', 'wanky', 'whoar',
-    'whore', 'willies', 'willy', 'xrated', 'xxx', 'staywoke'
+    'whore', 'willies', 'willy', 'xrated', 'xxx', 'policescorecard'
   ],
 
   /**

@@ -1,7 +1,7 @@
 version: 2.0
 jobs:
   build:
-    working_directory: ~/staywoke-api
+    working_directory: ~/police-scorecard-api
     docker:
       - image: circleci/node:12.12
     steps:
@@ -16,7 +16,7 @@ jobs:
           paths:
             - node_modules
   test:
-    working_directory: ~/staywoke-api
+    working_directory: ~/police-scorecard-api
     docker:
       - image: circleci/node:12.12
     steps:
@@ -30,7 +30,7 @@ jobs:
           path: coverage
           prefix: coverage
   deploy_production:
-    working_directory: ~/staywoke-api
+    working_directory: ~/police-scorecard-api
     docker:
       - image: circleci/node:12.12
     steps:
@@ -44,7 +44,7 @@ jobs:
           name: Deploy to Production
           command: ./.circleci/deploy-production.sh
   deploy_staging:
-    working_directory: ~/staywoke-api
+    working_directory: ~/police-scorecard-api
     docker:
       - image: circleci/node:12.12
     steps:

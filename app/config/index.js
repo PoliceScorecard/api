@@ -245,7 +245,7 @@ const config = convict({
       doc: 'The name of the API Elasticsearch index',
       format: String,
       env: 'API_LOGZIO_TYPE',
-      default: 'StayWokeAPI'
+      default: 'PoliceScorecardAPI'
     },
     debug: {
       doc: 'Print debug messages to the console',

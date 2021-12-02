@@ -1,26 +1,13 @@
 FORMAT: 1A
-HOST: https://api.staywoke.org/v1
+HOST: https://api.policescorecard.org/v1
 
 # API
 
-![StayWoke Logo](https://staywoke-github.s3.us-east-1.amazonaws.com/common/logo.png "StayWoke Logo")
-
-StayWoke is a community of learners, builders, and activists to create solutions to advance equity and justice in America.
-
 * _Maintained By:_ __[Peter Schmalfeldt](https://twitter.com/mrmidi)__
-* _Last Modified:_ __May 31st, 2020__
+* _Last Modified:_ __Nov 25th, 2021__
 * _Current API Version:_ __v1.0.0__
 
-__IMPORTANT:__ Currently, our API is only open for select non-commercial use. You can __[Register for an API Key](https://api.staywoke.org)__ if you would like access to our API. We typically review applications within a business day.
-
-<img src="https://staywoke-github.s3.us-east-1.amazonaws.com/api/apiary.jpg" style="max-width: 100%;">
-
-## Join us on Slack
-
-__[Join us on Slack](https://staywoke.slack.com)__ if you need help using our API, or you are interested in contributing.
-
-[![Slack Team Invite](https://staywoke-github.s3.us-east-1.amazonaws.com/common/slack-invite.png)](https://staywoke.slack.com)
-
+__IMPORTANT:__ Currently, our API is only open for select non-commercial use. You can __[Register for an API Key](https://api.policescorecard.org)__ if you would like access to our API. We typically review applications within a business day.
 
 # Group API Basics
 
@@ -65,7 +52,7 @@ for if there are a lot of results.
 + `meta.pages` (number) - Number of pages of results.  This is based on the `total` results divided by the `pageSize`.
 + `meta.page` (number) - Current Page
 + `data` (object or array) - This is the the actual data returned for the API call.  For API calls that are expected to return a single result, the `data` will be an Object.  For API calls that are expecting multiple items returned, `data` will be returned as an array ( even if there is only one item returned, such as search results, etc ).
-+ `data.staywoke_url` (string) - This will exist for results that have custom pages on the https://staywoke.org website.
++ `data.policescorecard_url` (string) - This will exist for results that have custom pages on the https://policescorecard.org website.
 
 __Response 200:__ (application/json)
 
@@ -110,7 +97,7 @@ __Response 403:__ (application/json)
 The following parameters are available on most API endpoint and used for pagination
 for if there are a lot of results.
 
-+ `apikey` (string) - Your StayWoke API Key
++ `apikey` (string) - Your Police Scorecard API Key
 + `fields` (string) - Comma Separated List of fields you want in the response.  By default all public fields will be returned, but if you only need specific fields you can greatly simplify your API response by specifying them.
 + `pageSize` (number, optional) - How many results to return in a single API call. Defaults to 30
 + `page` (number, optional) - If there is more than one page of results, you can set which page to load here
@@ -125,7 +112,7 @@ for if there are a lot of results.
 An example API Header would look like this:
 
 ```
-curl --data '' https://api.staywoke.org/v1/user/refresh/ -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIyIiwiaWF0IjoxNDUxNzEyNzg0LCJleHAiOjE0NTIzMTc1ODQsImlzcyI6IkRvaW5nIEFQSSJ9.x3eJutiulLnJCJkl_jP9ETj43ihePVeMtaWgWF0I60w"
+curl --data '' https://api.policescorecard.org/v1/user/refresh/ -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiIyIiwiaWF0IjoxNDUxNzEyNzg0LCJleHAiOjE0NTIzMTc1ODQsImlzcyI6IkRvaW5nIEFQSSJ9.x3eJutiulLnJCJkl_jP9ETj43ihePVeMtaWgWF0I60w"
 ```
 
 # Group API Access
@@ -166,13 +153,13 @@ again by either adding the Request Authorization Header below, or using the
             "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1Nzc5MjY2ODUsImV4cCI6MTU3ODUzMTQ4NSwiaXNzIjoiQVBJIn0.tC2KwBJyBDmyOuYCQjrmOYx0-KPPFKE6qC8sO3h09Sw"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -204,13 +191,13 @@ Request Authorization Header below. `token` should be the string returned in the
             "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjIsImlhdCI6MTQ1MTc5ODYyMSwiZXhwIjoxNDUyNDAzNDIxLCJpc3MiOiJEb2luZyBBUEkifQ.za4PspEZfeVxydO3QHSFBLm_9PcrCBRwK9HLofBY74s"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -231,13 +218,13 @@ Request Authorization Header below. `token` should be the string returned in the
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -307,13 +294,13 @@ their email address to complete registration.
             "username": "john_doe"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -339,13 +326,13 @@ their email address to complete registration.
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -400,13 +387,13 @@ address.
             "username": "jane_doe"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -427,13 +414,13 @@ address.
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -488,13 +475,13 @@ change.
             "username": "jane_doe"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -515,13 +502,13 @@ change.
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -575,13 +562,13 @@ it was them that requested the password change.
             "username": "jane_doe"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -602,13 +589,13 @@ it was them that requested the password change.
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -666,13 +653,13 @@ To access authentication-protected endpoints, you will need to include an
             "username": "jane_doe"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -693,13 +680,13 @@ To access authentication-protected endpoints, you will need to include an
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -726,13 +713,13 @@ Tell API that the user has logged out. This will only register if a Bearer Authe
             "success": true
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -753,13 +740,13 @@ Tell API that the user has logged out. This will only register if a Bearer Authe
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -812,13 +799,13 @@ reset link.
             "username": "jane_doe"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -839,13 +826,13 @@ reset link.
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -899,13 +886,13 @@ Reset password will check the token against the `new_password_key` column for th
             "username": "jane_doe"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -926,13 +913,13 @@ Reset password will check the token against the `new_password_key` column for th
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -960,13 +947,13 @@ If the user needs to resend their email confirmation, this is the endpoint to us
           },
           "data": "Confirmation Email Resent",
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -987,13 +974,13 @@ If the user needs to resend their email confirmation, this is the endpoint to us
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1069,13 +1056,13 @@ IMPORTANT NOTES ABOUT THIS ENDPOINT:
             }
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1096,13 +1083,13 @@ IMPORTANT NOTES ABOUT THIS ENDPOINT:
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1164,13 +1151,13 @@ IMPORTANT NOTES ABOUT THIS ENDPOINT:
             "username": "jane_ray"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1191,13 +1178,13 @@ IMPORTANT NOTES ABOUT THIS ENDPOINT:
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1246,13 +1233,13 @@ Get a public profile for given `username`.
             "username": "jane_doe"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1273,13 +1260,13 @@ Get a public profile for given `username`.
           },
           "data": [],
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1313,13 +1300,13 @@ Add's `username` to the current logged in users follow list.
             "user_id": 13
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1340,13 +1327,13 @@ Add's `username` to the current logged in users follow list.
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1381,13 +1368,13 @@ Removes `username` from the current logged in users follow list.
             "user_id": 13
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1408,13 +1395,13 @@ Removes `username` from the current logged in users follow list.
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1450,13 +1437,13 @@ Fetches list of users that is following `username`
             }
           ],
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1509,13 +1496,13 @@ Fetches list of users `username` is following
             }
           ],
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1536,13 +1523,13 @@ Fetches list of users `username` is following
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1578,13 +1565,13 @@ Fetches list of users that have registered using the provided invite `key` ( use
             }
           ],
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1605,13 +1592,13 @@ Fetches list of users that have registered using the provided invite `key` ( use
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1657,13 +1644,13 @@ Gets account settings for current logged in user
             }
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1714,7 +1701,7 @@ This endpoint will allow the logged in user to update their own account profile.
             "banned": false,
             "banned_reason": null,
             "bio": "I make things on the internet.",
-            "company_name": "StayWoke",
+            "company_name": "Police Scorecard",
             "created_date": "2020-01-02T07:42:43.000Z",
             "deletedAt": null,
             "email": "jane.doe@fake.com",
@@ -1735,13 +1722,13 @@ This endpoint will allow the logged in user to update their own account profile.
             "username": "jane_doe"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1762,13 +1749,13 @@ This endpoint will allow the logged in user to update their own account profile.
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1816,7 +1803,7 @@ This endpoint will allow the logged in user to update their own accounts Social 
             "banned": false,
             "banned_reason": null,
             "bio": "I make things on the internet.",
-            "company_name": "StayWoke",
+            "company_name": "Police Scorecard",
             "created_date": "2020-01-02T07:42:43.000Z",
             "deletedAt": null,
             "email": "jane.doe@fake.com",
@@ -1827,22 +1814,22 @@ This endpoint will allow the logged in user to update their own accounts Social 
             "location": "St. Petersburg, FL",
             "modified_date": "2020-01-04T01:36:25.313Z",
             "new_password_key": null,
-            "profile_link_1": "https://staywoke.org",
+            "profile_link_1": "https://policescorecard.org",
             "profile_link_2": "",
             "profile_link_3": "",
-            "profile_link_twitter": "https://twitter.com/staywoke",
+            "profile_link_twitter": "https://twitter.com/policescorecard",
             "profile_name": "Jane Doe",
             "profile_photo": "https://gravatar.com/avatar/a9601f3839e5d5da764c1861a5e1daf6?s=200",
             "username": "jane_doe"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1863,13 +1850,13 @@ This endpoint will allow the logged in user to update their own accounts Social 
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1920,13 +1907,13 @@ This endpoint will allow the logged in user to update their own accounts email n
             "web_someone_follows": true
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -1947,13 +1934,13 @@ This endpoint will allow the logged in user to update their own accounts email n
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -2005,13 +1992,13 @@ This endpoint will allow the logged in user to update their own accounts web not
             "web_someone_follows": true
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -2032,13 +2019,13 @@ This endpoint will allow the logged in user to update their own accounts web not
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -2125,13 +2112,13 @@ Fetch a list of all categories.  Optionally, you can pass over a `slug` for a ca
             }
           ]
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -2172,13 +2159,13 @@ Fetch a list of all tags being used.
             }
           ],
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -2312,13 +2299,13 @@ Get Scorecard Data for a Given State. Fetch a list of Police and Sheriff Departm
             "total_population": 18504882
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -2339,13 +2326,13 @@ Get Scorecard Data for a Given State. Fetch a list of Police and Sheriff Departm
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -2975,13 +2962,13 @@ Get Scorecard Summary for a All States. Returns Police and Sheriff Departments S
             }
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -3263,13 +3250,13 @@ Get Detailed Report Scorecard for a single department.
             }
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -3290,13 +3277,13 @@ Get Detailed Report Scorecard for a single department.
           },
           "data": null,
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -3401,13 +3388,13 @@ Fetch **All** Departments and return via Standard API Format ( GeoJSON data will
             ]
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -3495,13 +3482,13 @@ Fetch All **Police** Departments and return via Standard API Format ( GeoJSON da
             ]
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -3571,13 +3558,13 @@ Fetch All **Sheriff** Departments and return via Standard API Format ( GeoJSON d
             ]
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -3664,13 +3651,13 @@ Fetch All **California** Departments and return via Standard API Format ( GeoJSO
             ]
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -3758,13 +3745,13 @@ Fetch All **California Police** Departments and return via Standard API Format (
             ]
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -3834,13 +3821,13 @@ Fetch All **California Sheriff** Departments and return via Standard API Format 
             ]
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -3887,13 +3874,13 @@ Fetch Just the **Los Angeles, CA Police** Department and return via Standard API
             "type": "Feature"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -3934,13 +3921,13 @@ Fetch Just the **Los Angeles, CA Sheriff** Department and return via Standard AP
             "type": "Feature"
           },
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
 
@@ -4196,12 +4183,12 @@ Get a list of stated supported by our Scorecard.
             }
           ],
           "attribution": {
-            "text": "Data Provided by StayWoke",
-            "website": "https://staywoke.org",
-            "link": "<a href=\"https://staywoke.org\">Data Provided by StayWoke</a>",
-            "license": "https://raw.githubusercontent.com/staywoke/api/master/LICENSE",
-            "report_bug": "https://github.com/staywoke/api/issues/new",
-            "logo": "https://cdn.staywoke.org/common/logo.png",
-            "icon": "https://cdn.staywoke.org/common/icon.png"
+            "text": "Data Provided by Police Scorecard",
+            "website": "https://policescorecard.org",
+            "link": "<a href=\"https://policescorecard.org\">Data Provided by Police Scorecard</a>",
+            "license": "https://raw.githubusercontent.com/policescorecard/api/master/LICENSE",
+            "report_bug": "https://github.com/policescorecard/api/issues/new",
+            "logo": "https://cdn.policescorecard.org/common/logo.png",
+            "icon": "https://cdn.policescorecard.org/common/icon.png"
           }
         }
