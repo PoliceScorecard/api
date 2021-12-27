@@ -3,6 +3,8 @@ Police Scorecard API
 
 This is the new home of the Police Scorecard API project.
 
+[![Donate](https://policescorecard-github.s3.amazonaws.com/common/donate.png)](https://www.paypal.com/donate?hosted_button_id=U32Y7FCWBULNG)
+
 Using our API
 ---
 
