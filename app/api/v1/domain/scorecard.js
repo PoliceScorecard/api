@@ -324,7 +324,19 @@ module.exports = {
               people_killed: agency.dataValues.report.dataValues.total_people_killed,
               arrests: agency.dataValues.report.dataValues.total_arrests,
               complaints_reported: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported : null,
+              complaints_reported_2016: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2016 : null,
+              complaints_reported_2017: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2017 : null,
+              complaints_reported_2018: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2018 : null,
+              complaints_reported_2019: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2019 : null,
+              complaints_reported_2020: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2020 : null,
+              complaints_reported_2021: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2021 : null,
               complaints_sustained: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained : null,
+              complaints_sustained_2016: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2016 : null,
+              complaints_sustained_2017: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2017 : null,
+              complaints_sustained_2018: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2018 : null,
+              complaints_sustained_2019: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2019 : null,
+              complaints_sustained_2020: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2020 : null,
+              complaints_sustained_2021: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2021 : null,
 
               black_population: agency.dataValues.black_population,
               hispanic_population: agency.dataValues.hispanic_population,
@@ -335,6 +347,18 @@ module.exports = {
               white_people_killed: agency.dataValues.police_violence ? agency.dataValues.police_violence.dataValues.white_people_killed : null,
 
               low_level_arrests: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.low_level_arrests : null,
+
+              black_low_level_arrest_rate: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.black_low_level_arrest_rate : null,
+              black_low_level_arrests: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.black_low_level_arrests : null,
+              black_white_low_level_arrest_disparity: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.black_white_low_level_arrest_disparity : null,
+
+              hispanic_low_level_arrest_rate: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.hispanic_low_level_arrest_rate : null,
+              hispanic_low_level_arrests: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.hispanic_low_level_arrests : null,
+              hispanic_white_low_level_arrest_disparity: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.hispanic_white_low_level_arrest_disparity : null,
+
+              white_low_level_arrest_rate: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.white_low_level_arrest_rate : null,
+              white_low_level_arrests: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.white_low_level_arrests : null,
+
               violent_crime_arrests: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.violent_crime_arrests : null,
 
               arrests_2013: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.arrests_2013 : null,
