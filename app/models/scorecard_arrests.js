@@ -88,25 +88,25 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     black_low_level_arrest_rate: {
-      type: DataTypes.INTEGER(10).UNSIGNED
+      type: DataTypes.FLOAT(10, 2).UNSIGNED
     },
     black_low_level_arrests: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     black_white_low_level_arrest_disparity: {
-      type: DataTypes.INTEGER(10).UNSIGNED
+      type: DataTypes.FLOAT(10, 2).UNSIGNED
     },
     hispanic_low_level_arrest_rate: {
-      type: DataTypes.INTEGER(10).UNSIGNED
+      type: DataTypes.FLOAT(10, 2).UNSIGNED
     },
     hispanic_low_level_arrests: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     hispanic_white_low_level_arrest_disparity: {
-      type: DataTypes.INTEGER(10).UNSIGNED
+      type: DataTypes.FLOAT(10, 2).UNSIGNED
     },
     white_low_level_arrest_rate: {
-      type: DataTypes.INTEGER(10).UNSIGNED
+      type: DataTypes.FLOAT(10, 2).UNSIGNED
     },
     white_low_level_arrests: {
       type: DataTypes.INTEGER(10).UNSIGNED
