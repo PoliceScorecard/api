@@ -22,31 +22,211 @@ module.exports = (sequelize, DataTypes) => {
     civilian_complaints_reported: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
+    civilian_complaints_reported_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    civilian_complaints_reported_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    civilian_complaints_reported_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    civilian_complaints_reported_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    civilian_complaints_reported_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    civilian_complaints_reported_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
     civilian_complaints_sustained: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    civilian_complaints_sustained_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    civilian_complaints_sustained_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    civilian_complaints_sustained_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    civilian_complaints_sustained_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    civilian_complaints_sustained_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    civilian_complaints_sustained_2021: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     use_of_force_complaints_reported: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
+    use_of_force_complaints_reported_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    use_of_force_complaints_reported_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    use_of_force_complaints_reported_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    use_of_force_complaints_reported_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    use_of_force_complaints_reported_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    use_of_force_complaints_reported_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
     use_of_force_complaints_sustained: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    use_of_force_complaints_sustained_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    use_of_force_complaints_sustained_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    use_of_force_complaints_sustained_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    use_of_force_complaints_sustained_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    use_of_force_complaints_sustained_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    use_of_force_complaints_sustained_2021: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     discrimination_complaints_reported: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
+    discrimination_complaints_reported_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    discrimination_complaints_reported_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    discrimination_complaints_reported_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    discrimination_complaints_reported_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    discrimination_complaints_reported_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    discrimination_complaints_reported_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
     discrimination_complaints_sustained: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    discrimination_complaints_sustained_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    discrimination_complaints_sustained_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    discrimination_complaints_sustained_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    discrimination_complaints_sustained_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    discrimination_complaints_sustained_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    discrimination_complaints_sustained_2021: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     criminal_complaints_reported: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
+    criminal_complaints_reported_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    criminal_complaints_reported_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    criminal_complaints_reported_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    criminal_complaints_reported_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    criminal_complaints_reported_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    criminal_complaints_reported_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
     criminal_complaints_sustained: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    criminal_complaints_sustained_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    criminal_complaints_sustained_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    criminal_complaints_sustained_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    criminal_complaints_sustained_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    criminal_complaints_sustained_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    criminal_complaints_sustained_2021: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     complaints_in_detention_reported: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
+    complaints_in_detention_reported_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    complaints_in_detention_reported_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    complaints_in_detention_reported_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    complaints_in_detention_reported_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    complaints_in_detention_reported_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    complaints_in_detention_reported_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
     complaints_in_detention_sustained: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    complaints_in_detention_sustained_2016: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    complaints_in_detention_sustained_2017: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    complaints_in_detention_sustained_2018: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    complaints_in_detention_sustained_2019: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    complaints_in_detention_sustained_2020: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    complaints_in_detention_sustained_2021: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     years_of_complaints_data: {

@@ -37,10 +37,10 @@ module.exports = (sequelize, DataTypes) => {
     hispanic_murders_solved: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
-    homicides_2013_2019: {
+    homicides_reported: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
-    homicides_2013_2019_solved: {
+    homicides_solved: {
       type: DataTypes.INTEGER(10).UNSIGNED
     }
   }, {
