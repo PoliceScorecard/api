@@ -120,8 +120,8 @@ const SCORECARD_COLUMNS = [
   'white_murders_solved',
   'black_murders_solved',
   'hispanic_murders_solved',
-  'homicides_2013_2019',
-  'homicides_2013_2019_solved',
+  'homicides_reported',
+  'homicides_solved',
   'black_jail_population',
   'hispanic_jail_population',
   'white_jail_population',
@@ -234,7 +234,6 @@ const SCORECARD_COLUMNS = [
   'fines_forfeitures_2017',
   'fines_forfeitures_2018',
   'fines_forfeitures_2019',
-  'education_budget',
   'housing_budget_2010',
   'housing_budget_2011',
   'housing_budget_2012',
@@ -383,7 +382,75 @@ const SCORECARD_COLUMNS = [
   'K9_deployments_2018',
   'K9_deployments_2019',
   'K9_deployments_2020',
-  'K9_deployments_2021'
+  'K9_deployments_2021',
+  'civilian_complaints_reported_2016',
+  'civilian_complaints_sustained_2016',
+  'use_of_force_complaints_reported_2016',
+  'use_of_force_complaints_sustained_2016',
+  'discrimination_complaints_reported_2016',
+  'discrimination_complaints_sustained_2016',
+  'criminal_complaints_reported_2016',
+  'criminal_complaints_sustained_2016',
+  'complaints_in_detention_reported_2016',
+  'complaints_in_detention_sustained_2016',
+  'civilian_complaints_reported_2017',
+  'civilian_complaints_sustained_2017',
+  'use_of_force_complaints_reported_2017',
+  'use_of_force_complaints_sustained_2017',
+  'discrimination_complaints_reported_2017',
+  'discrimination_complaints_sustained_2017',
+  'criminal_complaints_reported_2017',
+  'criminal_complaints_sustained_2017',
+  'complaints_in_detention_reported_2017',
+  'complaints_in_detention_sustained_2017',
+  'civilian_complaints_reported_2018',
+  'civilian_complaints_sustained_2018',
+  'use_of_force_complaints_reported_2018',
+  'use_of_force_complaints_sustained_2018',
+  'discrimination_complaints_reported_2018',
+  'discrimination_complaints_sustained_2018',
+  'criminal_complaints_reported_2018',
+  'criminal_complaints_sustained_2018',
+  'complaints_in_detention_reported_2018',
+  'complaints_in_detention_sustained_2018',
+  'civilian_complaints_reported_2019',
+  'civilian_complaints_sustained_2019',
+  'use_of_force_complaints_reported_2019',
+  'use_of_force_complaints_sustained_2019',
+  'discrimination_complaints_reported_2019',
+  'discrimination_complaints_sustained_2019',
+  'criminal_complaints_reported_2019',
+  'criminal_complaints_sustained_2019',
+  'complaints_in_detention_reported_2019',
+  'complaints_in_detention_sustained_2019',
+  'civilian_complaints_reported_2020',
+  'civilian_complaints_sustained_2020',
+  'use_of_force_complaints_reported_2020',
+  'use_of_force_complaints_sustained_2020',
+  'discrimination_complaints_reported_2020',
+  'discrimination_complaints_sustained_2020',
+  'criminal_complaints_reported_2020',
+  'criminal_complaints_sustained_2020',
+  'complaints_in_detention_reported_2020',
+  'complaints_in_detention_sustained_2020',
+  'civilian_complaints_reported_2021',
+  'civilian_complaints_sustained_2021',
+  'use_of_force_complaints_reported_2021',
+  'use_of_force_complaints_sustained_2021',
+  'discrimination_complaints_reported_2021',
+  'discrimination_complaints_sustained_2021',
+  'criminal_complaints_reported_2021',
+  'criminal_complaints_sustained_2021',
+  'complaints_in_detention_reported_2021',
+  'complaints_in_detention_sustained_2021',
+  'black_low_level_arrests',
+  'hispanic_low_level_arrests',
+  'white_low_level_arrests',
+  'black_low_level_arrest_rate',
+  'hispanic_low_level_arrest_rate',
+  'white_low_level_arrest_rate',
+  'black_white_low_level_arrest_disparity',
+  'hispanic_white_low_level_arrest_disparity'
 ]
 
 /**
@@ -632,29 +699,6 @@ const __calcPercentDrugPossessionArrests = (row) => {
   }
 
   return 0
-}
-
-/**
- * Calculate Percent Education Budget
- * @param {object} row from CSV File
- */
-const __calcPercentEducationBudget = (row) => {
-  try {
-    if (!row || !row.education_budget || !row.total_budget) {
-      return 0
-    }
-
-    const educationBudget = util.parseInt(row.education_budget, true) || 0
-    const totalBudget = util.parseInt(row.total_budget, true) || 0
-
-    if (educationBudget >= 0 && totalBudget > 0) {
-      return util.parseFloat(((educationBudget / totalBudget) * 100).toFixed(2), true, true)
-    }
-
-    return 0
-  } catch (e) {
-    return 0
-  }
 }
 
 /**
@@ -2033,7 +2077,6 @@ module.exports = {
           const percentBlackDeadlyForce = __calcPercentBlackDeadlyForce(row)
           const percentCorrectionsBudget = __calcPercentCorrectionsBudget(row)
           const percentDrugPossessionArrests = __calcPercentDrugPossessionArrests(row)
-          const percentEducationBudget = __calcPercentEducationBudget(row)
           const percentHealthBudget = __calcPercentHealthBudget(row)
           const percentHispanicArrests = __calcPercentHispanicArrests(row)
           const percentHispanicDeadlyForce = __calcPercentHispanicDeadlyForce(row)
@@ -2112,6 +2155,14 @@ module.exports = {
               low_level_arrests_2021: util.parseFloat(row.low_level_arrests_2021, false, true),
               low_level_arrests_2022: util.parseFloat(row.low_level_arrests_2022, false, true),
               native_american_arrests: util.parseInt(row.native_american_arrests, false, true),
+              black_low_level_arrest_rate: util.parseFloat(row.black_low_level_arrest_rate, false, true),
+              black_low_level_arrests: util.parseInt(row.black_low_level_arrests, false, true),
+              black_white_low_level_arrest_disparity: util.parseFloat(row.black_white_low_level_arrest_disparity, false, true),
+              hispanic_low_level_arrest_rate: util.parseFloat(row.hispanic_low_level_arrest_rate, false, true),
+              hispanic_low_level_arrests: util.parseInt(row.hispanic_low_level_arrests, false, true),
+              hispanic_white_low_level_arrest_disparity: util.parseFloat(row.hispanic_white_low_level_arrest_disparity, false, true),
+              white_low_level_arrest_rate: util.parseFloat(row.white_low_level_arrest_rate, false, true),
+              white_low_level_arrests: util.parseInt(row.white_low_level_arrests, false, true),
               non_black_drug_arrests: util.parseInt(row.nonblack_drug_arrests, false, true),
               other_arrests: util.parseInt(row.other_arrests, false, true),
               other_drug_arrests: util.parseInt(row.other_drug_arrests, false, true),
@@ -2124,8 +2175,8 @@ module.exports = {
               black_murders_unsolved: util.parseInt(row.black_murders_unsolved, false, true),
               hispanic_murders_solved: util.parseInt(row.hispanic_murders_solved, false, true),
               hispanic_murders_unsolved: util.parseInt(row.hispanic_murders_unsolved, false, true),
-              homicides_2013_2019_solved: util.parseInt(row.homicides_2013_2019_solved, false, true),
-              homicides_2013_2019: util.parseInt(row.homicides_2013_2019, false, true),
+              homicides_solved: util.parseInt(row.homicides_solved, false, true),
+              homicides_reported: util.parseInt(row.homicides_reported, false, true),
               white_murders_solved: util.parseInt(row.white_murders_solved, false, true),
               white_murders_unsolved: util.parseInt(row.white_murders_unsolved, false, true)
             },
@@ -2149,17 +2200,77 @@ module.exports = {
             },
             police_accountability: {
               civilian_complaints_reported: util.parseInt(row.civilian_complaints_reported, false, true),
+              civilian_complaints_reported_2016: util.parseInt(row.civilian_complaints_reported_2016, false, true),
+              civilian_complaints_reported_2017: util.parseInt(row.civilian_complaints_reported_2017, false, true),
+              civilian_complaints_reported_2018: util.parseInt(row.civilian_complaints_reported_2018, false, true),
+              civilian_complaints_reported_2019: util.parseInt(row.civilian_complaints_reported_2019, false, true),
+              civilian_complaints_reported_2020: util.parseInt(row.civilian_complaints_reported_2020, false, true),
+              civilian_complaints_reported_2021: util.parseInt(row.civilian_complaints_reported_2021, false, true),
               civilian_complaints_source_link: util.parseURL(row.civilian_complaints_source_link),
               civilian_complaints_source: util.parseString(row.civilian_complaints_source),
               civilian_complaints_sustained: util.parseInt(row.civilian_complaints_sustained, false, true),
+              civilian_complaints_sustained_2016: util.parseInt(row.civilian_complaints_sustained_2016, false, true),
+              civilian_complaints_sustained_2017: util.parseInt(row.civilian_complaints_sustained_2017, false, true),
+              civilian_complaints_sustained_2018: util.parseInt(row.civilian_complaints_sustained_2018, false, true),
+              civilian_complaints_sustained_2019: util.parseInt(row.civilian_complaints_sustained_2019, false, true),
+              civilian_complaints_sustained_2020: util.parseInt(row.civilian_complaints_sustained_2020, false, true),
+              civilian_complaints_sustained_2021: util.parseInt(row.civilian_complaints_sustained_2021, false, true),
               complaints_in_detention_reported: util.parseInt(row.complaints_in_detention_reported, false, true),
+              complaints_in_detention_reported_2016: util.parseInt(row.complaints_in_detention_reported_2016, false, true),
+              complaints_in_detention_reported_2017: util.parseInt(row.complaints_in_detention_reported_2017, false, true),
+              complaints_in_detention_reported_2018: util.parseInt(row.complaints_in_detention_reported_2018, false, true),
+              complaints_in_detention_reported_2019: util.parseInt(row.complaints_in_detention_reported_2019, false, true),
+              complaints_in_detention_reported_2020: util.parseInt(row.complaints_in_detention_reported_2020, false, true),
+              complaints_in_detention_reported_2021: util.parseInt(row.complaints_in_detention_reported_2021, false, true),
               complaints_in_detention_sustained: util.parseInt(row.complaints_in_detention_sustained, false, true),
+              complaints_in_detention_sustained_2016: util.parseInt(row.complaints_in_detention_sustained_2016, false, true),
+              complaints_in_detention_sustained_2017: util.parseInt(row.complaints_in_detention_sustained_2017, false, true),
+              complaints_in_detention_sustained_2018: util.parseInt(row.complaints_in_detention_sustained_2018, false, true),
+              complaints_in_detention_sustained_2019: util.parseInt(row.complaints_in_detention_sustained_2019, false, true),
+              complaints_in_detention_sustained_2020: util.parseInt(row.complaints_in_detention_sustained_2020, false, true),
+              complaints_in_detention_sustained_2021: util.parseInt(row.complaints_in_detention_sustained_2021, false, true),
               criminal_complaints_reported: util.parseInt(row.criminal_complaints_reported, false, true),
+              criminal_complaints_reported_2016: util.parseInt(row.criminal_complaints_reported_2016, false, true),
+              criminal_complaints_reported_2017: util.parseInt(row.criminal_complaints_reported_2017, false, true),
+              criminal_complaints_reported_2018: util.parseInt(row.criminal_complaints_reported_2018, false, true),
+              criminal_complaints_reported_2019: util.parseInt(row.criminal_complaints_reported_2019, false, true),
+              criminal_complaints_reported_2020: util.parseInt(row.criminal_complaints_reported_2020, false, true),
+              criminal_complaints_reported_2021: util.parseInt(row.criminal_complaints_reported_2021, false, true),
               criminal_complaints_sustained: util.parseInt(row.criminal_complaints_sustained, false, true),
+              criminal_complaints_sustained_2016: util.parseInt(row.criminal_complaints_sustained_2016, false, true),
+              criminal_complaints_sustained_2017: util.parseInt(row.criminal_complaints_sustained_2017, false, true),
+              criminal_complaints_sustained_2018: util.parseInt(row.criminal_complaints_sustained_2018, false, true),
+              criminal_complaints_sustained_2019: util.parseInt(row.criminal_complaints_sustained_2019, false, true),
+              criminal_complaints_sustained_2020: util.parseInt(row.criminal_complaints_sustained_2020, false, true),
+              criminal_complaints_sustained_2021: util.parseInt(row.criminal_complaints_sustained_2021, false, true),
               discrimination_complaints_reported: util.parseInt(row.discrimination_complaints_reported, false, true),
+              discrimination_complaints_reported_2016: util.parseInt(row.discrimination_complaints_reported_2016, false, true),
+              discrimination_complaints_reported_2017: util.parseInt(row.discrimination_complaints_reported_2017, false, true),
+              discrimination_complaints_reported_2018: util.parseInt(row.discrimination_complaints_reported_2018, false, true),
+              discrimination_complaints_reported_2019: util.parseInt(row.discrimination_complaints_reported_2019, false, true),
+              discrimination_complaints_reported_2020: util.parseInt(row.discrimination_complaints_reported_2020, false, true),
+              discrimination_complaints_reported_2021: util.parseInt(row.discrimination_complaints_reported_2021, false, true),
               discrimination_complaints_sustained: util.parseInt(row.discrimination_complaints_sustained, false, true),
+              discrimination_complaints_sustained_2016: util.parseInt(row.discrimination_complaints_sustained_2016, false, true),
+              discrimination_complaints_sustained_2017: util.parseInt(row.discrimination_complaints_sustained_2017, false, true),
+              discrimination_complaints_sustained_2018: util.parseInt(row.discrimination_complaints_sustained_2018, false, true),
+              discrimination_complaints_sustained_2019: util.parseInt(row.discrimination_complaints_sustained_2019, false, true),
+              discrimination_complaints_sustained_2020: util.parseInt(row.discrimination_complaints_sustained_2020, false, true),
+              discrimination_complaints_sustained_2021: util.parseInt(row.discrimination_complaints_sustained_2021, false, true),
               use_of_force_complaints_reported: util.parseInt(row.use_of_force_complaints_reported, false, true),
+              use_of_force_complaints_reported_2016: util.parseInt(row.use_of_force_complaints_reported_2016, false, true),
+              use_of_force_complaints_reported_2017: util.parseInt(row.use_of_force_complaints_reported_2017, false, true),
+              use_of_force_complaints_reported_2018: util.parseInt(row.use_of_force_complaints_reported_2018, false, true),
+              use_of_force_complaints_reported_2019: util.parseInt(row.use_of_force_complaints_reported_2019, false, true),
+              use_of_force_complaints_reported_2020: util.parseInt(row.use_of_force_complaints_reported_2020, false, true),
+              use_of_force_complaints_reported_2021: util.parseInt(row.use_of_force_complaints_reported_2021, false, true),
               use_of_force_complaints_sustained: util.parseInt(row.use_of_force_complaints_sustained, false, true),
+              use_of_force_complaints_sustained_2016: util.parseInt(row.use_of_force_complaints_sustained_2016, false, true),
+              use_of_force_complaints_sustained_2017: util.parseInt(row.use_of_force_complaints_sustained_2017, false, true),
+              use_of_force_complaints_sustained_2018: util.parseInt(row.use_of_force_complaints_sustained_2018, false, true),
+              use_of_force_complaints_sustained_2019: util.parseInt(row.use_of_force_complaints_sustained_2019, false, true),
+              use_of_force_complaints_sustained_2020: util.parseInt(row.use_of_force_complaints_sustained_2020, false, true),
+              use_of_force_complaints_sustained_2021: util.parseInt(row.use_of_force_complaints_sustained_2021, false, true),
               years_of_complaints_data: util.parseString(row.years_of_complaints_data)
             },
             police_funding: {
@@ -2181,7 +2292,6 @@ module.exports = {
               corrections_budget_2020: util.parseInt(row.corrections_budget_2020, false, true),
               corrections_budget_2021: util.parseInt(row.corrections_budget_2021, false, true),
               corrections_budget_2022: util.parseInt(row.corrections_budget_2022, false, true),
-              education_budget: util.parseInt(row.education_budget, false, true),
               fines_forfeitures_2010: util.parseInt(row.fines_forfeitures_2010, false, true),
               fines_forfeitures_2011: util.parseInt(row.fines_forfeitures_2011, false, true),
               fines_forfeitures_2012: util.parseInt(row.fines_forfeitures_2012, false, true),
@@ -2438,7 +2548,6 @@ module.exports = {
               percent_criminal_complaints_sustained: util.parseInt(row.calc_percent_criminal_complaints_sustained, false, true),
               percent_discrimination_complaints_sustained: util.parseInt(row.calc_percent_discrimination_complaints_sustained, false, true),
               percent_drug_possession_arrests: percentDrugPossessionArrests ? percentDrugPossessionArrests : null,
-              percent_education_budget: percentEducationBudget ? percentEducationBudget : null,
               percent_health_budget: percentHealthBudget ? percentHealthBudget : null,
               percent_hispanic_arrests: percentHispanicArrests ? percentHispanicArrests : null,
               percent_hispanic_deadly_force: percentHispanicDeadlyForce ? percentHispanicDeadlyForce : null,
