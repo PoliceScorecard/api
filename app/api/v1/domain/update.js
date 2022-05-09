@@ -590,11 +590,66 @@ const __calcHispanicMurderUnsolvedRate = (row) => {
  * @param {object} row from CSV File
  */
 const __calcLessLethalForceChange = (row) => {
+  const lessLethalForce2013 = util.parseInt(row.less_lethal_force_2013, false) || null
+  const lessLethalForce2014 = util.parseInt(row.less_lethal_force_2014, false) || null
+  const lessLethalForce2015 = util.parseInt(row.less_lethal_force_2015, false) || null
   const lessLethalForce2016 = util.parseInt(row.less_lethal_force_2016, false) || null
+  const lessLethalForce2017 = util.parseInt(row.less_lethal_force_2017, false) || null
+  const lessLethalForce2018 = util.parseInt(row.less_lethal_force_2018, false) || null
+  const lessLethalForce2019 = util.parseInt(row.less_lethal_force_2019, false) || null
   const lessLethalForce2020 = util.parseInt(row.less_lethal_force_2020, false) || null
+  const lessLethalForce2021 = util.parseInt(row.less_lethal_force_2021, false) || null
+  const lessLethalForce2022 = util.parseInt(row.less_lethal_force_2022, false) || null
 
-  if (lessLethalForce2016 !== null && lessLethalForce2020 !== null && lessLethalForce2016 > 0 && lessLethalForce2020 >= 0) {
-    return Math.floor((lessLethalForce2020 / lessLethalForce2016) * 100) - 100
+  let start = null
+  let end = null
+
+  if (!start && lessLethalForce2013) {
+    start = lessLethalForce2013
+  } else if (!start && lessLethalForce2014) {
+    start = lessLethalForce2014
+  } else if (!start && lessLethalForce2015) {
+    start = lessLethalForce2015
+  } else if (!start && lessLethalForce2016) {
+    start = lessLethalForce2016
+  } else if (!start && lessLethalForce2017) {
+    start = lessLethalForce2017
+  } else if (!start && lessLethalForce2018) {
+    start = lessLethalForce2018
+  } else if (!start && lessLethalForce2019) {
+    start = lessLethalForce2019
+  } else if (!start && lessLethalForce2020) {
+    start = lessLethalForce2020
+  } else if (!start && lessLethalForce2021) {
+    start = lessLethalForce2021
+  } else if (!start && lessLethalForce2022) {
+    start = lessLethalForce2022
+  }
+
+  if (lessLethalForce2013) {
+    end = lessLethalForce2013
+  } else if (lessLethalForce2014) {
+    end = lessLethalForce2014
+  } else if (lessLethalForce2015) {
+    end = lessLethalForce2015
+  } else if (lessLethalForce2016) {
+    end = lessLethalForce2016
+  } else if (lessLethalForce2017) {
+    end = lessLethalForce2017
+  } else if (lessLethalForce2018) {
+    end = lessLethalForce2018
+  } else if (lessLethalForce2019) {
+    end = lessLethalForce2019
+  } else if (lessLethalForce2020) {
+    end = lessLethalForce2020
+  } else if (lessLethalForce2021) {
+    end = lessLethalForce2021
+  } else if (lessLethalForce2022) {
+    end = lessLethalForce2022
+  }
+
+  if (start !== null && end !== null && start > 0 && end >= 0) {
+    return Math.floor((end / start) * 100) - 100
   }
 
   return 0
