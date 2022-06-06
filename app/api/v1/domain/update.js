@@ -628,23 +628,32 @@ const __calcLessLethalForceChange = (row) => {
 
   if (lessLethalForce2013) {
     end = lessLethalForce2013
-  } else if (lessLethalForce2014) {
+  }
+  if (lessLethalForce2014) {
     end = lessLethalForce2014
-  } else if (lessLethalForce2015) {
+  }
+  if (lessLethalForce2015) {
     end = lessLethalForce2015
-  } else if (lessLethalForce2016) {
+  }
+  if (lessLethalForce2016) {
     end = lessLethalForce2016
-  } else if (lessLethalForce2017) {
+  }
+  if (lessLethalForce2017) {
     end = lessLethalForce2017
-  } else if (lessLethalForce2018) {
+  }
+  if (lessLethalForce2018) {
     end = lessLethalForce2018
-  } else if (lessLethalForce2019) {
+  }
+  if (lessLethalForce2019) {
     end = lessLethalForce2019
-  } else if (lessLethalForce2020) {
+  }
+  if (lessLethalForce2020) {
     end = lessLethalForce2020
-  } else if (lessLethalForce2021) {
+  }
+  if (lessLethalForce2021) {
     end = lessLethalForce2021
-  } else if (lessLethalForce2022) {
+  }
+  if (lessLethalForce2022) {
     end = lessLethalForce2022
   }
 
