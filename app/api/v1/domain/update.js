@@ -2042,14 +2042,14 @@ module.exports = {
                 const regex = /'[a-z_]+'/g
                 const found = message.match(regex)
 
-                message.replace('Error: Error: Error: SequelizeDatabaseError:', '')
+                message.replace(/ Error:/g, '')
 
                 if (found) {
                   const col = found[0].replace(/'/g, '')
                   column = `${col} = ${row[col]} - `
                 }
               }
-              importErrors.push(`${util.titleCase(row.location_name)}, ${row.state}: ${column}${message}`)
+              importErrors.push(`SHERIFF [${row.ori}]: ${util.titleCase(row.location_name)}, ${row.state}: ${column}${message}`)
               processed += 1
 
               checkComplete()
@@ -2078,14 +2078,49 @@ module.exports = {
                 const regex = /'[a-z_]+'/g
                 const found = message.match(regex)
 
-                message.replace('Error: Error: Error: SequelizeDatabaseError:', '')
+                message.replace(/ Error:/g, '')
 
                 if (found) {
                   const col = found[0].replace(/'/g, '')
                   column = `${col} = ${row[col]} - `
                 }
               }
-              importErrors.push(`${util.titleCase(row.location_name)}, ${row.state}: ${column}${message}`)
+              importErrors.push(`POLICE [${row.ori}]: ${util.titleCase(row.location_name)}, ${row.state}: ${column}${message}`)
+              processed += 1
+
+              checkComplete()
+            })
+          }
+
+          const importStateData = async (row, result, cleanData) => {
+            // Add
+            cleanData.agency.country_id = result.country_id
+            cleanData.agency.state_id = result.id
+
+            // Update or Insert Agency
+            __upsertScorecardAgency(cleanData, {
+              ori: row.ori,
+              state_id: result.id
+            }).then(() => {
+              processed += 1
+
+              checkComplete()
+            }).catch((err) => {
+              let column = ''
+              const message = err.message
+
+              if (message.indexOf('SequelizeDatabaseError') > -1) {
+                const regex = /'[a-z_]+'/g
+                const found = message.match(regex)
+
+                message.replace(/ Error:/g, '')
+
+                if (found) {
+                  const col = found[0].replace(/'/g, '')
+                  column = `${col} = ${row[col]} - `
+                }
+              }
+              importErrors.push(`STATE [${row.ori}]: ${util.titleCase(row.location_name)}, ${row.state}: ${column}${message}`)
               processed += 1
 
               checkComplete()
@@ -2700,6 +2735,19 @@ module.exports = {
                 }).catch(() => {
                   importWarning(row, row.agency_type)
                 })
+              }
+            }).catch((err) => {
+              importError(err, row)
+            })
+          } else if (row.agency_type === 'state') {
+            // Search State
+            await models.geo_states.findOne({
+              where: {
+                fips_code: util.leftPad(row.fips_state_code, 2, '0')
+              }
+            }).then((result) => {
+              if (result) {
+                importStateData(row, result, cleanData)
               }
             }).catch((err) => {
               importError(err, row)

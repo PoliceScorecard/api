@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     type: {
-      type: DataTypes.ENUM('county-police', 'police-department', 'primary-state-le', 'regional-police', 'sheriff', 'special-police', 'tribal'),
+      type: DataTypes.ENUM('county-police', 'police-department', 'primary-state-le', 'regional-police', 'sheriff', 'special-police', 'tribal', 'state'),
       allowNull: false,
       defaultValue: 'police-department'
     },
