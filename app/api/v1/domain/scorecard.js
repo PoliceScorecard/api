@@ -241,6 +241,11 @@ module.exports = {
   getStates () {
     // Search Counties for Sheriff Department
     return models.scorecard_agency.findAll({
+      where: {
+        type: {
+          [Op.ne]: 'state'
+        }
+      },
       include: [
         'report',
         'city',
