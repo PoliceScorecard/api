@@ -217,6 +217,9 @@ module.exports = (sequelize, DataTypes) => {
     percent_used_against_people_who_were_unarmed: {
       type: DataTypes.FLOAT(5, 2).UNSIGNED
     },
+    percent_people_killed_by_vehicle: {
+      type: DataTypes.FLOAT(5, 2).UNSIGNED
+    },
     percent_violent_crime_arrests: {
       type: DataTypes.FLOAT(5, 2).UNSIGNED
     },
