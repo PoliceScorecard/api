@@ -6,39 +6,12 @@
 	],
 	"settings": {
 		"files.exclude": {
-      "**/.git": false,
-      "**/.svn": false,
-      "**/.hg": false,
-      "**/CVS": false,
-      "**/.DS_Store": false,
-      "**/*.git": false,
-      ".github": false,
-      ".nyc_output": false,
-      ".vscode": false,
-      "coverage": false,
-      "node_modules": false,
-      ".dockerignore": false,
-      "doc-conf.json": false,
-      "docker-compose.yml": false,
-      "LICENSE": false,
-      "dredd.yml": false,
-      "Dockerfile": false,
-      "circle.yml": false,
-      "apiary.apib": false,
-      ".nvmrc": false,
-      ".gitignore": false,
-      ".editorconfig": false,
-      ".eslintignore": false,
-      ".sequelizerc": false,
-      "api.code-workspace": false,
-      "package-lock.json": false
-    },
-		"explorerExclude.backup": {
       "**/.git": true,
       "**/.svn": true,
       "**/.hg": true,
       "**/CVS": true,
       "**/.DS_Store": true,
+      "**/Thumbs.db": true,
       "**/*.git": true,
       ".github": true,
       ".nyc_output": true,
@@ -60,6 +33,7 @@
       ".sequelizerc": true,
       "api.code-workspace": true,
       "package-lock.json": true
-    }
+    },
+		"explorerExclude.backup": {}
 	}
 }

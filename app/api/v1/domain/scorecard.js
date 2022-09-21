@@ -167,7 +167,7 @@ module.exports = {
     }
 
     const where = {
-      type: type
+      type: type === 'state' ? ['sheriff', 'police-department'] : type
     }
 
     const includes = [
@@ -221,9 +221,9 @@ module.exports = {
             longitude: (agency.dataValues.city) ? util.parseFloat(agency.dataValues.city.dataValues.longitude) : null,
             overall_score: agency.dataValues.report.dataValues.overall_score,
             slug: agency.dataValues.slug,
-            title: `${agency.dataValues.name}, ${agency.dataValues.state.dataValues.abbr} ${util.titleCase(agency.dataValues.type, true)}`,
-            url_pretty: `/${state.toLowerCase()}/${agency.dataValues.type}/${agency.dataValues.slug}`,
-            url: `/?state=${state.toLowerCase()}&type=${agency.dataValues.type}&location=${agency.dataValues.slug}`
+            title: agency.dataValues.type === 'state' ? `State of ${util.titleCase(agency.dataValues.type, true)}` : `${agency.dataValues.name}, ${agency.dataValues.state.dataValues.abbr} ${util.titleCase(agency.dataValues.type, true)}`,
+            url_pretty: agency.dataValues.type === 'state' ? `/${state.toLowerCase()}` : `/${state.toLowerCase()}/${agency.dataValues.type}/${agency.dataValues.slug}`,
+            url: agency.dataValues.type === 'state' ? `/?state=${state.toLowerCase()}` : `/?state=${state.toLowerCase()}&type=${agency.dataValues.type}&location=${agency.dataValues.slug}`
           })
         })
 
@@ -241,6 +241,11 @@ module.exports = {
   getStates () {
     // Search Counties for Sheriff Department
     return models.scorecard_agency.findAll({
+      where: {
+        type: {
+          [Op.ne]: 'state'
+        }
+      },
       include: [
         'report',
         'city',
@@ -526,9 +531,9 @@ module.exports = {
             change_overall_score: agency.dataValues.report.dataValues.change_overall_score,
             population: agency.dataValues.total_population,
             slug: agency.dataValues.slug,
-            title: `${agency.dataValues.name}, ${stateDetails.name} ${util.titleCase(agency.dataValues.type, true)}`,
-            url: `/?state=${state.toLowerCase()}&type=${agency.dataValues.type}&location=${agency.dataValues.slug}`,
-            url_pretty: `/${state.toLowerCase()}/${agency.dataValues.type}/${agency.dataValues.slug}`
+            title: agency.dataValues.type === 'state' ? `State of ${stateDetails.name}` : `${agency.dataValues.name}, ${stateDetails.name} ${util.titleCase(agency.dataValues.type, true)}`,
+            url: agency.dataValues.type === 'state' ? `/?state=${state.toLowerCase()}` : `/?state=${state.toLowerCase()}&type=${agency.dataValues.type}&location=${agency.dataValues.slug}`,
+            url_pretty: agency.dataValues.type === 'state' ? `/${state.toLowerCase()}` : `/${state.toLowerCase()}/${agency.dataValues.type}/${agency.dataValues.slug}`
           })
         })
 
@@ -558,6 +563,50 @@ module.exports = {
 
         // Return the agencies in order of best score to worse
         return cleanAgencies
+      } else {
+        return Promise.reject(`No location found for ${state}`)
+      }
+    })
+  },
+
+  /**
+   * Get Report
+   * @param {String} state
+   */
+  getStateOverview (state) {
+    if (!state) {
+      return Promise.reject('Missing Required `state` parameter')
+    }
+
+    const stateDetails = util.getStateByID(state)
+
+    if (!stateDetails) {
+      return Promise.reject('Invalid `state` parameter')
+    }
+
+    // Search for Agency that Matches Location
+    return models.scorecard_agency.findOne({
+      where: {
+        type: 'state',
+        state_id: stateDetails.id
+      },
+      include: [
+        'arrests',
+        'homicide',
+        'jail',
+        'police_accountability',
+        'police_funding',
+        'police_violence',
+        'policy',
+        'report',
+        'country',
+        'state',
+        'city',
+        'county'
+      ]
+    }).then((result) => {
+      if (result && result.dataValues) {
+        return __buildAgency(result)
       } else {
         return Promise.reject(`No location found for ${state}`)
       }

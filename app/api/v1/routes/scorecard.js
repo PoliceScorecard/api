@@ -38,6 +38,27 @@ router.route('/scorecard/grades/:state/:type').get((request, response) => {
 /**
  * [GET] Scorecard Report
  * @memberof module:routes/scorecard
+ * @name /scorecard/overview
+ */
+/* istanbul ignore next */
+router.route('/scorecard/overview/:state').get((request, response) => {
+  const state = (typeof request.params.state !== 'undefined') ? request.params.state : null
+
+  ScorecardDomain.getStateOverview(state).then((scorecard) => {
+    response.json(util.createAPIResponse({
+      data: scorecard
+    }, request.query.fields))
+  }).catch(err => {
+    response.status(400)
+    response.json(util.createAPIResponse({
+      errors: (err && err.message) ? [err.message] : [err]
+    }, request.query.fields))
+  })
+})
+
+/**
+ * [GET] Scorecard Report
+ * @memberof module:routes/scorecard
  * @name /scorecard/report
  */
 /* istanbul ignore next */

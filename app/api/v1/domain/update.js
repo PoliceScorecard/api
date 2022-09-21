@@ -1028,6 +1028,27 @@ const __calcPercentUsedAgainstPeopleWhoWereUnarmed = (row) => {
 }
 
 /**
+ * Calculate Percent Used Against People Killed by Vehicle
+ * @param {object} row from CSV File
+ */
+const __calcPercentPeopleKilledByVehicle = (row) => {
+  const vehiclePeopleKilled = util.parseInt(row.vehicle_people_killed, true) || 0
+  const allPeopleKilled = __calcTotalPeopleKilled(row)
+
+  if (vehiclePeopleKilled >= 0 && allPeopleKilled > 0) {
+    return util.parseFloat(
+      (
+        vehiclePeopleKilled / allPeopleKilled * 100
+      ).toFixed(2)
+    )
+  } else if (allPeopleKilled > 0 && vehiclePeopleKilled === allPeopleKilled) {
+    return 100
+  }
+
+  return 0
+}
+
+/**
  * Calculate Percent Violent Crime Arrests
  * @param {object} row from CSV File
  */
@@ -2042,14 +2063,14 @@ module.exports = {
                 const regex = /'[a-z_]+'/g
                 const found = message.match(regex)
 
-                message.replace('Error: Error: Error: SequelizeDatabaseError:', '')
+                message.replace(/ Error:/g, '')
 
                 if (found) {
                   const col = found[0].replace(/'/g, '')
                   column = `${col} = ${row[col]} - `
                 }
               }
-              importErrors.push(`${util.titleCase(row.location_name)}, ${row.state}: ${column}${message}`)
+              importErrors.push(`SHERIFF [${row.ori}]: ${util.titleCase(row.location_name)}, ${row.state}: ${column}${message}`)
               processed += 1
 
               checkComplete()
@@ -2078,14 +2099,49 @@ module.exports = {
                 const regex = /'[a-z_]+'/g
                 const found = message.match(regex)
 
-                message.replace('Error: Error: Error: SequelizeDatabaseError:', '')
+                message.replace(/ Error:/g, '')
 
                 if (found) {
                   const col = found[0].replace(/'/g, '')
                   column = `${col} = ${row[col]} - `
                 }
               }
-              importErrors.push(`${util.titleCase(row.location_name)}, ${row.state}: ${column}${message}`)
+              importErrors.push(`POLICE [${row.ori}]: ${util.titleCase(row.location_name)}, ${row.state}: ${column}${message}`)
+              processed += 1
+
+              checkComplete()
+            })
+          }
+
+          const importStateData = async (row, result, cleanData) => {
+            // Add
+            cleanData.agency.country_id = result.country_id
+            cleanData.agency.state_id = result.id
+
+            // Update or Insert Agency
+            __upsertScorecardAgency(cleanData, {
+              ori: row.ori,
+              state_id: result.id
+            }).then(() => {
+              processed += 1
+
+              checkComplete()
+            }).catch((err) => {
+              let column = ''
+              const message = err.message
+
+              if (message.indexOf('SequelizeDatabaseError') > -1) {
+                const regex = /'[a-z_]+'/g
+                const found = message.match(regex)
+
+                message.replace(/ Error:/g, '')
+
+                if (found) {
+                  const col = found[0].replace(/'/g, '')
+                  column = `${col} = ${row[col]} - `
+                }
+              }
+              importErrors.push(`STATE [${row.ori}]: ${util.titleCase(row.location_name)}, ${row.state}: ${column}${message}`)
               processed += 1
 
               checkComplete()
@@ -2154,6 +2210,7 @@ module.exports = {
           const percentShotFirst = __calcPercentShotFirst(row)
           const percentUsedAgainstPeopleWhoWereNotArmedWithGun = __calcPercentUsedAgainstPeopleWhoWereNotArmedWithGun(row)
           const percentUsedAgainstPeopleWhoWereUnarmed = __calcPercentUsedAgainstPeopleWhoWereUnarmed(row)
+          const percentPeopleKilledByVehicle = __calcPercentPeopleKilledByVehicle(row)
           const percentViolentCrimeArrests = __calcPercentViolentCrimeArrests(row)
           const percentWhiteArrests = __calcPercentWhiteArrests(row)
           const percentWhiteDeadlyForce = __calcPercentWhiteDeadlyForce(row)
@@ -2634,6 +2691,7 @@ module.exports = {
               percent_use_of_force_complaints_sustained: util.parseInt(row.calc_percent_use_of_force_complaints_sustained, false, true),
               percent_used_against_people_who_were_not_armed_with_gun: percentUsedAgainstPeopleWhoWereNotArmedWithGun ? percentUsedAgainstPeopleWhoWereNotArmedWithGun : null,
               percent_used_against_people_who_were_unarmed: percentUsedAgainstPeopleWhoWereUnarmed ? percentUsedAgainstPeopleWhoWereUnarmed : null,
+              percent_people_killed_by_vehicle: percentPeopleKilledByVehicle ? percentPeopleKilledByVehicle : null,
               percent_violent_crime_arrests: percentViolentCrimeArrests ? percentViolentCrimeArrests : null,
               percent_white_arrests: percentWhiteArrests ? percentWhiteArrests : null,
               percent_white_deadly_force: percentWhiteDeadlyForce ? percentWhiteDeadlyForce : null,
@@ -2700,6 +2758,19 @@ module.exports = {
                 }).catch(() => {
                   importWarning(row, row.agency_type)
                 })
+              }
+            }).catch((err) => {
+              importError(err, row)
+            })
+          } else if (row.agency_type === 'state') {
+            // Search State
+            await models.geo_states.findOne({
+              where: {
+                fips_code: util.leftPad(row.fips_state_code, 2, '0')
+              }
+            }).then((result) => {
+              if (result) {
+                importStateData(row, result, cleanData)
               }
             }).catch((err) => {
               importError(err, row)

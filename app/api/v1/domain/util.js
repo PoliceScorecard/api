@@ -671,9 +671,9 @@ module.exports = {
     if (!val) {
       cleanVal = useZero ? 0 : null
     } else if (typeof val === 'number') {
-      cleanVal = parseFloat(val)
-    } else if (typeof val === 'string' && val !== '' && /[0-9,.-]/.test(val)) {
-      cleanVal = parseFloat(val.replace(/[^0-9.-]/g, ''))
+      cleanVal = parseFloat(val, 10)
+    } else if (typeof val === 'string' && val !== '' && /[0-9,E+.-]/.test(val)) {
+      cleanVal = parseFloat(Number(val.replace(/[^0-9E+.-]/g, '')), 10)
     }
 
     if (cleanVal) {
@@ -699,9 +699,9 @@ module.exports = {
     if (!val) {
       cleanVal = useZero ? 0 : null
     } else if (typeof val === 'number') {
-      cleanVal = parseInt(val)
-    } else if (typeof val === 'string' && val !== '' && /[0-9,.-]/.test(val)) {
-      cleanVal = parseInt(val.replace(/[^0-9.-]/g, ''))
+      cleanVal = parseInt(val, 10)
+    } else if (typeof val === 'string' && val !== '' && /[0-9,E+.-]/.test(val)) {
+      cleanVal = parseInt(Number(val.replace(/[^0-9E+.-]/g, '')), 10)
     }
 
     if (cleanVal !== null) {
