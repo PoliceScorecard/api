@@ -898,6 +898,14 @@ module.exports = {
             label = label.concat(' *')
           }
 
+          let resultState = `${data.type === 'sheriff' ? 'Sheriff Department' : 'Police Department'}`
+          let resultURL = `/${data.state.abbr.toLowerCase()}/${data.type}/${data.slug}`
+
+          if (data.type === 'state') {
+            resultState = 'State Overview'
+            resultURL = `/${data.state.abbr.toLowerCase()}`
+          }
+
           results.push({
             class: data.report.grade_class,
             complete: data.complete,
@@ -905,8 +913,8 @@ module.exports = {
             matches: keywords,
             name: name,
             score: data.report.overall_score,
-            type: `${data.type === 'sheriff' ? 'Sheriff Department' : 'Police Department'}`,
-            url: `/${data.state.abbr.toLowerCase()}/${data.type}/${data.slug}`
+            type: resultState,
+            url: resultURL
           })
         })
 
