@@ -79,6 +79,9 @@ module.exports = (sequelize, DataTypes) => {
     police_shootings_2022: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
+    police_shootings_per_arrest: {
+      type: DataTypes.FLOAT(15, 2).UNSIGNED
+    },
     white_people_killed: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
