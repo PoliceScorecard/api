@@ -54,6 +54,9 @@ module.exports = (sequelize, DataTypes) => {
     arrests_2022: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
+    arrests_2023: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
     low_level_arrests: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
@@ -85,6 +88,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     low_level_arrests_2022: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    low_level_arrests_2023: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     black_low_level_arrest_rate: {

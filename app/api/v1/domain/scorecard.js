@@ -304,7 +304,8 @@ module.exports = {
                 total_arrests_2019: 0,
                 total_arrests_2020: 0,
                 total_arrests_2021: 0,
-                total_arrests_2022: 0
+                total_arrests_2022: 0,
+                total_arrests_2023: 0
               }
             }
 
@@ -335,6 +336,8 @@ module.exports = {
               complaints_reported_2019: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2019 : null,
               complaints_reported_2020: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2020 : null,
               complaints_reported_2021: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2021 : null,
+              complaints_reported_2022: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2022 : null,
+              complaints_reported_2023: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2023 : null,
               complaints_sustained: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained : null,
               complaints_sustained_2016: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2016 : null,
               complaints_sustained_2017: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2017 : null,
@@ -342,6 +345,8 @@ module.exports = {
               complaints_sustained_2019: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2019 : null,
               complaints_sustained_2020: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2020 : null,
               complaints_sustained_2021: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2021 : null,
+              complaints_sustained_2022: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2022 : null,
+              complaints_sustained_2023: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2023 : null,
 
               black_population: agency.dataValues.black_population,
               hispanic_population: agency.dataValues.hispanic_population,
@@ -376,6 +381,7 @@ module.exports = {
               arrests_2020: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.arrests_2020 : null,
               arrests_2021: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.arrests_2021 : null,
               arrests_2022: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.arrests_2022 : null,
+              arrests_2023: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.arrests_2023 : null,
 
               slug: agency.dataValues.slug,
               title: `${agency.dataValues.name}, ${stateDetails.name} ${util.titleCase(agency.dataValues.type, true)}`,
@@ -417,6 +423,7 @@ module.exports = {
             const currentArrests2020 = util.parseInt(cleanAgencies[key].arrests_2020, true) || 0
             const currentArrests2021 = util.parseInt(cleanAgencies[key].arrests_2021, true) || 0
             const currentArrests2022 = util.parseInt(cleanAgencies[key].arrests_2022, true) || 0
+            const currentArrests2023 = util.parseInt(cleanAgencies[key].arrests_2023, true) || 0
 
             cleanAgencies[key][type] = _.reverse(_.sortBy(cleanAgencies[key][type], ['population']))
             cleanAgencies[key].total_agencies = currentCount + cleanAgencies[key][type].length
@@ -448,6 +455,7 @@ module.exports = {
             cleanAgencies[key].total_arrests_2020 = currentArrests2020 + _.sumBy(cleanAgencies[key][type], 'arrests_2020')
             cleanAgencies[key].total_arrests_2021 = currentArrests2021 + _.sumBy(cleanAgencies[key][type], 'arrests_2021')
             cleanAgencies[key].total_arrests_2022 = currentArrests2022 + _.sumBy(cleanAgencies[key][type], 'arrests_2022')
+            cleanAgencies[key].total_arrests_2023 = currentArrests2023 + _.sumBy(cleanAgencies[key][type], 'arrests_2023')
           })
 
           const averageScore = Math.floor(cleanAgencies[key].total_overall_score / cleanAgencies[key].total_agencies)

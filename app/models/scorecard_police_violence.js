@@ -49,6 +49,9 @@ module.exports = (sequelize, DataTypes) => {
     less_lethal_force_2022: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
+    less_lethal_force_2023: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
     police_shootings_2013: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
@@ -77,6 +80,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     police_shootings_2022: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    police_shootings_2023: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     police_shootings_per_arrest: {
@@ -176,6 +182,12 @@ module.exports = (sequelize, DataTypes) => {
     taser_2021: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
+    taser_2022: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    taser_2023: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
     impact_weapons_and_projectiles_2013: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
@@ -201,6 +213,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     impact_weapons_and_projectiles_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    impact_weapons_and_projectiles_2022: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    impact_weapons_and_projectiles_2023: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     neck_restraints_2013: {
@@ -230,6 +248,12 @@ module.exports = (sequelize, DataTypes) => {
     neck_restraints_2021: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
+    neck_restraints_2022: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    neck_restraints_2023: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
     chemical_spray_2013: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
@@ -257,6 +281,12 @@ module.exports = (sequelize, DataTypes) => {
     chemical_spray_2021: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
+    chemical_spray_2022: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    chemical_spray_2023: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
     K9_deployments_2013: {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
@@ -282,6 +312,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER(10).UNSIGNED
     },
     K9_deployments_2021: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    K9_deployments_2022: {
+      type: DataTypes.INTEGER(10).UNSIGNED
+    },
+    K9_deployments_2023: {
       type: DataTypes.INTEGER(10).UNSIGNED
     }
   }, {

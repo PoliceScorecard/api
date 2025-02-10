@@ -16,7 +16,6 @@ Installing
 Using Docker is Super Easy once it's installed, you just need to run the following commands to do the initial setup:
 
 ```bash
-docker pull docker.elastic.co/elasticsearch/elasticsearch:7.5.1
 docker-compose up --build
 ```
 

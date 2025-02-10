@@ -60,6 +60,8 @@ const SCORECARD_COLUMNS = [
   'less_lethal_force_2019',
   'less_lethal_force_2020',
   'less_lethal_force_2021',
+  'less_lethal_force_2022',
+  'less_lethal_force_2023',
   'police_shootings_2013',
   'police_shootings_2014',
   'police_shootings_2015',
@@ -69,6 +71,8 @@ const SCORECARD_COLUMNS = [
   'police_shootings_2019',
   'police_shootings_2020',
   'police_shootings_2021',
+  'police_shootings_2022',
+  'police_shootings_2023',
   'white_people_killed',
   'black_people_killed',
   'hispanic_people_killed',
@@ -78,17 +82,9 @@ const SCORECARD_COLUMNS = [
   'unarmed_people_killed',
   'vehicle_people_killed',
   'armed_people_killed',
-  'fatality_rate',
   'shot_first',
   'people_killed_or_injured_armed_with_gun',
   'people_killed_or_injured_gun_perceived',
-  'people_killed_or_injured_unarmed',
-  'people_killed_or_injured_vehicle_incident',
-  'people_killed_or_injured_black',
-  'people_killed_or_injured_white',
-  'people_killed_or_injured_hispanic',
-  'people_killed_or_injured_asian_pacific',
-  'people_killed_or_injured_other',
   'all_deadly_force_incidents',
   'civilian_complaints_reported',
   'civilian_complaints_sustained',
@@ -110,6 +106,8 @@ const SCORECARD_COLUMNS = [
   'arrests_2019',
   'arrests_2020',
   'arrests_2021',
+  'arrests_2022',
+  'arrests_2023',
   'low_level_arrests',
   'violent_crime_arrests',
   'black_arrests',
@@ -147,36 +145,6 @@ const SCORECARD_COLUMNS = [
   'jail_deaths_suicide',
   'jail_deaths_other',
   'jail_deaths_investigating',
-  'disqualifies_complaints',
-  'policy_language_disqualifies_complaints',
-  'restricts_delays_interrogations',
-  'policy_language_restricts_delays_interrogations',
-  'gives_officers_unfair_access_to_information',
-  'policy_language_gives_officers_unfair_access_to_information',
-  'limits_oversight_discipline',
-  'policy_language_limits_oversight_discipline',
-  'requires_city_pay_for_misconduct',
-  'policy_language_requires_city_pay_for_misconduct',
-  'erases_misconduct_records',
-  'policy_language_erases_misconduct_records',
-  'requires_deescalation',
-  'policy_language_requires_deescalation',
-  'bans_chokeholds_and_strangleholds',
-  'policy_language_bans_chokeholds_and_strangleholds',
-  'duty_to_intervene',
-  'policy_language_duty_to_intervene',
-  'requires_warning_before_shooting',
-  'policy_language_requires_warning_before_shooting',
-  'restricts_shooting_at_moving_vehicles',
-  'policy_language_restricts_shooting_at_moving_vehicles',
-  'requires_comprehensive_reporting',
-  'policy_language_requires_comprehensive_reporting',
-  'requires_exhaust_other_means_before_shooting',
-  'policy_language_requires_exhaust_other_means_before_shooting',
-  'has_use_of_force_continuum',
-  'policy_language_has_use_of_force_continuum',
-  'policy_manual_link',
-  'police_union_contract_link',
   'calc_total_less_lethal_force_estimated',
   'calc_less_lethal_per_10k_arrests',
   'calc_percentile_less_lethal_force',
@@ -200,22 +168,9 @@ const SCORECARD_COLUMNS = [
   'calc_percentile_jail_deaths_per_1k_jail_population',
   'calc_black_drug_arrest_disparity',
   'calc_black_deadly_force_disparity',
-  'calc_overall_disparity_index',
   'calc_percentile_overall_disparity_index',
-  'calc_overall_score',
-  'calc_police_violence_score',
-  'calc_police_accountability_score',
-  'calc_approach_to_policing_score',
-  'calc_police_funding_score',
   'calc_police_spending_per_resident',
   'calc_percentile_police_spending',
-  'change_overall_score',
-  'change_police_violence_score',
-  'change_police_accountability_score',
-  'change_approach_to_policing_score',
-  'change_police_funding_score',
-  'currently_updating_use_of_force',
-  'currently_updating_union_contract',
   'total_officers_2013',
   'total_officers_2014',
   'total_officers_2015',
@@ -225,6 +180,8 @@ const SCORECARD_COLUMNS = [
   'total_officers_2019',
   'total_officers_2020',
   'total_officers_2021',
+  'total_officers_2022',
+  'total_officers_2023',
   'total_budget_2010',
   'total_budget_2011',
   'total_budget_2012',
@@ -237,6 +194,8 @@ const SCORECARD_COLUMNS = [
   'total_budget_2019',
   'total_budget_2020',
   'total_budget_2021',
+  'total_budget_2022',
+  'total_budget_2023',
   'fines_forfeitures_2010',
   'fines_forfeitures_2011',
   'fines_forfeitures_2012',
@@ -249,6 +208,8 @@ const SCORECARD_COLUMNS = [
   'fines_forfeitures_2019',
   'fines_forfeitures_2020',
   'fines_forfeitures_2021',
+  'fines_forfeitures_2022',
+  'fines_forfeitures_2023',
   'housing_budget_2010',
   'housing_budget_2011',
   'housing_budget_2012',
@@ -261,6 +222,8 @@ const SCORECARD_COLUMNS = [
   'housing_budget_2019',
   'housing_budget_2020',
   'housing_budget_2021',
+  'housing_budget_2022',
+  'housing_budget_2023',
   'health_budget_2010',
   'health_budget_2011',
   'health_budget_2012',
@@ -273,6 +236,8 @@ const SCORECARD_COLUMNS = [
   'health_budget_2019',
   'health_budget_2020',
   'health_budget_2021',
+  'health_budget_2022',
+  'health_budget_2023',
   'police_budget_2010',
   'police_budget_2011',
   'police_budget_2012',
@@ -285,6 +250,8 @@ const SCORECARD_COLUMNS = [
   'police_budget_2019',
   'police_budget_2020',
   'police_budget_2021',
+  'police_budget_2022',
+  'police_budget_2023',
   'budget_source_link',
   'average_annual_misconduct_settlements',
   'year_misconduct_settlement_data',
@@ -323,6 +290,8 @@ const SCORECARD_COLUMNS = [
   'corrections_budget_2019',
   'corrections_budget_2020',
   'corrections_budget_2021',
+  'corrections_budget_2022',
+  'corrections_budget_2023',
   'low_level_arrests_2013',
   'low_level_arrests_2014',
   'low_level_arrests_2015',
@@ -332,6 +301,8 @@ const SCORECARD_COLUMNS = [
   'low_level_arrests_2019',
   'low_level_arrests_2020',
   'low_level_arrests_2021',
+  'low_level_arrests_2022',
+  'low_level_arrests_2023',
   'percent_officers_white',
   'percent_officers_black',
   'percent_officers_hispanic',
@@ -347,6 +318,8 @@ const SCORECARD_COLUMNS = [
   'taser_2019',
   'taser_2020',
   'taser_2021',
+  'taser_2022',
+  'taser_2023',
   'impact_weapons_and_projectiles_2013',
   'impact_weapons_and_projectiles_2014',
   'impact_weapons_and_projectiles_2015',
@@ -356,6 +329,8 @@ const SCORECARD_COLUMNS = [
   'impact_weapons_and_projectiles_2019',
   'impact_weapons_and_projectiles_2020',
   'impact_weapons_and_projectiles_2021',
+  'impact_weapons_and_projectiles_2022',
+  'impact_weapons_and_projectiles_2023',
   'neck_restraints_2013',
   'neck_restraints_2014',
   'neck_restraints_2015',
@@ -365,6 +340,8 @@ const SCORECARD_COLUMNS = [
   'neck_restraints_2019',
   'neck_restraints_2020',
   'neck_restraints_2021',
+  'neck_restraints_2022',
+  'neck_restraints_2023',
   'chemical_spray_2013',
   'chemical_spray_2014',
   'chemical_spray_2015',
@@ -374,6 +351,8 @@ const SCORECARD_COLUMNS = [
   'chemical_spray_2019',
   'chemical_spray_2020',
   'chemical_spray_2021',
+  'chemical_spray_2022',
+  'chemical_spray_2023',
   'K9_deployments_2013',
   'K9_deployments_2014',
   'K9_deployments_2015',
@@ -383,66 +362,87 @@ const SCORECARD_COLUMNS = [
   'K9_deployments_2019',
   'K9_deployments_2020',
   'K9_deployments_2021',
+  'K9_deployments_2022',
+  'K9_deployments_2023',
   'civilian_complaints_reported_2016',
-  'civilian_complaints_sustained_2016',
-  'use_of_force_complaints_reported_2016',
-  'use_of_force_complaints_sustained_2016',
-  'discrimination_complaints_reported_2016',
-  'discrimination_complaints_sustained_2016',
-  'criminal_complaints_reported_2016',
-  'criminal_complaints_sustained_2016',
-  'complaints_in_detention_reported_2016',
-  'complaints_in_detention_sustained_2016',
   'civilian_complaints_reported_2017',
-  'civilian_complaints_sustained_2017',
-  'use_of_force_complaints_reported_2017',
-  'use_of_force_complaints_sustained_2017',
-  'discrimination_complaints_reported_2017',
-  'discrimination_complaints_sustained_2017',
-  'criminal_complaints_reported_2017',
-  'criminal_complaints_sustained_2017',
-  'complaints_in_detention_reported_2017',
-  'complaints_in_detention_sustained_2017',
   'civilian_complaints_reported_2018',
-  'civilian_complaints_sustained_2018',
-  'use_of_force_complaints_reported_2018',
-  'use_of_force_complaints_sustained_2018',
-  'discrimination_complaints_reported_2018',
-  'discrimination_complaints_sustained_2018',
-  'criminal_complaints_reported_2018',
-  'criminal_complaints_sustained_2018',
-  'complaints_in_detention_reported_2018',
-  'complaints_in_detention_sustained_2018',
   'civilian_complaints_reported_2019',
-  'civilian_complaints_sustained_2019',
-  'use_of_force_complaints_reported_2019',
-  'use_of_force_complaints_sustained_2019',
-  'discrimination_complaints_reported_2019',
-  'discrimination_complaints_sustained_2019',
-  'criminal_complaints_reported_2019',
-  'criminal_complaints_sustained_2019',
-  'complaints_in_detention_reported_2019',
-  'complaints_in_detention_sustained_2019',
   'civilian_complaints_reported_2020',
-  'civilian_complaints_sustained_2020',
-  'use_of_force_complaints_reported_2020',
-  'use_of_force_complaints_sustained_2020',
-  'discrimination_complaints_reported_2020',
-  'discrimination_complaints_sustained_2020',
-  'criminal_complaints_reported_2020',
-  'criminal_complaints_sustained_2020',
-  'complaints_in_detention_reported_2020',
-  'complaints_in_detention_sustained_2020',
   'civilian_complaints_reported_2021',
+  'civilian_complaints_reported_2022',
+  'civilian_complaints_reported_2023',
+  'civilian_complaints_sustained_2016',
+  'civilian_complaints_sustained_2017',
+  'civilian_complaints_sustained_2018',
+  'civilian_complaints_sustained_2019',
+  'civilian_complaints_sustained_2020',
   'civilian_complaints_sustained_2021',
+  'civilian_complaints_sustained_2022',
+  'civilian_complaints_sustained_2023',
+  'use_of_force_complaints_reported_2016',
+  'use_of_force_complaints_reported_2017',
+  'use_of_force_complaints_reported_2018',
+  'use_of_force_complaints_reported_2019',
+  'use_of_force_complaints_reported_2020',
   'use_of_force_complaints_reported_2021',
+  'use_of_force_complaints_reported_2022',
+  'use_of_force_complaints_sustained_2016',
+  'use_of_force_complaints_sustained_2017',
+  'use_of_force_complaints_sustained_2018',
+  'use_of_force_complaints_sustained_2019',
+  'use_of_force_complaints_sustained_2020',
   'use_of_force_complaints_sustained_2021',
+  'use_of_force_complaints_sustained_2022',
+  'use_of_force_complaints_sustained_2023',
+  'discrimination_complaints_reported_2016',
+  'discrimination_complaints_reported_2017',
+  'discrimination_complaints_reported_2018',
+  'discrimination_complaints_reported_2019',
+  'discrimination_complaints_reported_2020',
   'discrimination_complaints_reported_2021',
+  'discrimination_complaints_reported_2022',
+  'discrimination_complaints_reported_2023',
+  'discrimination_complaints_sustained_2016',
+  'discrimination_complaints_sustained_2017',
+  'discrimination_complaints_sustained_2018',
+  'discrimination_complaints_sustained_2019',
+  'discrimination_complaints_sustained_2020',
   'discrimination_complaints_sustained_2021',
+  'discrimination_complaints_sustained_2022',
+  'discrimination_complaints_sustained_2023',
+  'criminal_complaints_reported_2016',
+  'criminal_complaints_reported_2017',
+  'criminal_complaints_reported_2018',
+  'criminal_complaints_reported_2019',
+  'criminal_complaints_reported_2020',
   'criminal_complaints_reported_2021',
+  'criminal_complaints_reported_2022',
+  'criminal_complaints_reported_2023',
+  'criminal_complaints_sustained_2016',
+  'criminal_complaints_sustained_2017',
+  'criminal_complaints_sustained_2018',
+  'criminal_complaints_sustained_2019',
+  'criminal_complaints_sustained_2020',
   'criminal_complaints_sustained_2021',
+  'criminal_complaints_sustained_2022',
+  'criminal_complaints_sustained_2023',
+  'complaints_in_detention_reported_2016',
+  'complaints_in_detention_reported_2017',
+  'complaints_in_detention_reported_2018',
+  'complaints_in_detention_reported_2019',
+  'complaints_in_detention_reported_2020',
   'complaints_in_detention_reported_2021',
+  'complaints_in_detention_reported_2022',
+  'complaints_in_detention_reported_2023',
+  'complaints_in_detention_sustained_2016',
+  'complaints_in_detention_sustained_2017',
+  'complaints_in_detention_sustained_2018',
+  'complaints_in_detention_sustained_2019',
+  'complaints_in_detention_sustained_2020',
   'complaints_in_detention_sustained_2021',
+  'complaints_in_detention_sustained_2022',
+  'complaints_in_detention_sustained_2023',
   'black_low_level_arrests',
   'hispanic_low_level_arrests',
   'white_low_level_arrests',
@@ -450,7 +450,18 @@ const SCORECARD_COLUMNS = [
   'hispanic_low_level_arrest_rate',
   'white_low_level_arrest_rate',
   'black_white_low_level_arrest_disparity',
-  'hispanic_white_low_level_arrest_disparity'
+  'hispanic_white_low_level_arrest_disparity',
+  'calc_overall_score',
+  'calc_police_violence_score',
+  'calc_police_accountability_score',
+  'calc_approach_to_policing_score',
+  'calc_police_funding_score',
+  'change_overall_score',
+  'change_police_violence_score',
+  'change_police_accountability_score',
+  'change_approach_to_policing_score',
+  'change_police_funding_score',
+  'use_of_force_complaints_reported_2023'
 ]
 
 /**
@@ -600,6 +611,7 @@ const __calcLessLethalForceChange = (row) => {
   const lessLethalForce2020 = util.parseInt(row.less_lethal_force_2020, false) || null
   const lessLethalForce2021 = util.parseInt(row.less_lethal_force_2021, false) || null
   const lessLethalForce2022 = util.parseInt(row.less_lethal_force_2022, false) || null
+  const lessLethalForce2023 = util.parseInt(row.less_lethal_force_2023, false) || null
 
   let start = null
   let end = null
@@ -624,6 +636,8 @@ const __calcLessLethalForceChange = (row) => {
     start = lessLethalForce2021
   } else if (!start && lessLethalForce2022) {
     start = lessLethalForce2022
+  } else if (!start && lessLethalForce2023) {
+    start = lessLethalForce2023
   }
 
   if (lessLethalForce2013) {
@@ -655,6 +669,9 @@ const __calcLessLethalForceChange = (row) => {
   }
   if (lessLethalForce2022) {
     end = lessLethalForce2022
+  }
+  if (lessLethalForce2023) {
+    end = lessLethalForce2023
   }
 
   if (start !== null && end !== null && start > 0 && end >= 0) {
@@ -1117,6 +1134,7 @@ const __calcPoliceShootingsIncidents = (row) => {
   const policeShootings2020 = util.parseInt(row.police_shootings_2020, true) || 0
   const policeShootings2021 = util.parseInt(row.police_shootings_2021, true) || 0
   const policeShootings2022 = util.parseInt(row.police_shootings_2022, true) || 0
+  const policeShootings2023 = util.parseInt(row.police_shootings_2023, true) || 0
 
   return (
     policeShootings2013 +
@@ -1128,7 +1146,8 @@ const __calcPoliceShootingsIncidents = (row) => {
     policeShootings2019 +
     policeShootings2020 +
     policeShootings2021 +
-    policeShootings2022
+    policeShootings2022 +
+    policeShootings2023
   )
 }
 
@@ -1162,6 +1181,7 @@ const __calcTotalArrests = (row) => {
   const arrests2020 = util.parseInt(row.arrests_2020, true) || 0
   const arrests2021 = util.parseInt(row.arrests_2021, true) || 0
   const arrests2022 = util.parseInt(row.arrests_2022, true) || 0
+  const arrests2023 = util.parseInt(row.arrests_2023, true) || 0
 
   return (
     arrests2013 +
@@ -1173,7 +1193,8 @@ const __calcTotalArrests = (row) => {
     arrests2019 +
     arrests2020 +
     arrests2021 +
-    arrests2022
+    arrests2022 +
+    arrests2023
   )
 }
 
@@ -1192,6 +1213,7 @@ const __calcTotalLowLevelArrests = (row) => {
   const arrests2020 = util.parseInt(row.low_level_arrests_2020, true) || 0
   const arrests2021 = util.parseInt(row.low_level_arrests_2021, true) || 0
   const arrests2022 = util.parseInt(row.low_level_arrests_2022, true) || 0
+  const arrests2023 = util.parseInt(row.low_level_arrests_2023, true) || 0
 
   return (
     arrests2013 +
@@ -1203,7 +1225,8 @@ const __calcTotalLowLevelArrests = (row) => {
     arrests2019 +
     arrests2020 +
     arrests2021 +
-    arrests2022
+    arrests2022 +
+    arrests2023
   )
 }
 
@@ -1904,6 +1927,9 @@ module.exports = {
           if (row.police_budget_2022 && row.police_budget_2022.length > 0 && row.corrections_budget_2022 && row.corrections_budget_2022.length > 0 && row.total_budget_2022 && row.total_budget_2022.length > 0) {
             row.corrections_budget = row.corrections_budget_2022
           }
+          if (row.police_budget_2023 && row.police_budget_2023.length > 0 && row.corrections_budget_2023 && row.corrections_budget_2023.length > 0 && row.total_budget_2023 && row.total_budget_2023.length > 0) {
+            row.corrections_budget = row.corrections_budget_2023
+          }
 
           // Update Health Budget for Latest Year we have data for
           if (row.police_budget_2010 && row.police_budget_2010.length > 0 && row.health_budget_2010 && row.health_budget_2010.length > 0 && row.total_budget_2010 && row.total_budget_2010.length > 0) {
@@ -1945,6 +1971,9 @@ module.exports = {
           if (row.police_budget_2022 && row.police_budget_2022.length > 0 && row.health_budget_2022 && row.health_budget_2022.length > 0 && row.total_budget_2022 && row.total_budget_2022.length > 0) {
             row.health_budget = row.health_budget_2022
           }
+          if (row.police_budget_2023 && row.police_budget_2023.length > 0 && row.health_budget_2023 && row.health_budget_2023.length > 0 && row.total_budget_2023 && row.total_budget_2023.length > 0) {
+            row.health_budget = row.health_budget_2023
+          }
 
           // Update Housing Budget for Latest Year we have data for
           if (row.police_budget_2010 && row.police_budget_2010.length > 0 && row.housing_budget_2010 && row.housing_budget_2010.length > 0 && row.total_budget_2010 && row.total_budget_2010.length > 0) {
@@ -1985,6 +2014,9 @@ module.exports = {
           }
           if (row.police_budget_2022 && row.police_budget_2022.length > 0 && row.housing_budget_2022 && row.housing_budget_2022.length > 0 && row.total_budget_2022 && row.total_budget_2022.length > 0) {
             row.housing_budget = row.housing_budget_2022
+          }
+          if (row.police_budget_2023 && row.police_budget_2023.length > 0 && row.housing_budget_2023 && row.housing_budget_2023.length > 0 && row.total_budget_2023 && row.total_budget_2023.length > 0) {
+            row.housing_budget = row.housing_budget_2023
           }
 
           // Update Police Budget for Latest Year we have data for
@@ -2039,6 +2071,10 @@ module.exports = {
           if (row.police_budget_2022 && row.police_budget_2022.length > 0 && row.total_budget_2022 && row.total_budget_2022.length > 0) {
             row.police_budget = row.police_budget_2022
             row.total_budget = row.total_budget_2022
+          }
+          if (row.police_budget_2023 && row.police_budget_2023.length > 0 && row.total_budget_2023 && row.total_budget_2023.length > 0) {
+            row.police_budget = row.police_budget_2023
+            row.total_budget = row.total_budget_2023
           }
 
           const importSheriffData = async (row, result, cleanData) => {
@@ -2259,6 +2295,7 @@ module.exports = {
               arrests_2020: util.parseInt(row.arrests_2020, false, true),
               arrests_2021: util.parseInt(row.arrests_2021, false, true),
               arrests_2022: util.parseInt(row.arrests_2022, false, true),
+              arrests_2023: util.parseInt(row.arrests_2023, false, true),
               asian_pacific_arrests: util.parseInt(row.asian_pacific_arrests, false, true),
               black_arrests: util.parseInt(row.black_arrests, false, true),
               black_drug_arrests: util.parseInt(row.black_drug_arrests, false, true),
@@ -2275,6 +2312,7 @@ module.exports = {
               low_level_arrests_2020: util.parseFloat(row.low_level_arrests_2020, false, true),
               low_level_arrests_2021: util.parseFloat(row.low_level_arrests_2021, false, true),
               low_level_arrests_2022: util.parseFloat(row.low_level_arrests_2022, false, true),
+              low_level_arrests_2023: util.parseFloat(row.low_level_arrests_2023, false, true),
               native_american_arrests: util.parseInt(row.native_american_arrests, false, true),
               black_low_level_arrest_rate: util.parseFloat(row.black_low_level_arrest_rate, false, true),
               black_low_level_arrests: util.parseInt(row.black_low_level_arrests, false, true),
@@ -2327,6 +2365,8 @@ module.exports = {
               civilian_complaints_reported_2019: util.parseInt(row.civilian_complaints_reported_2019, false, true),
               civilian_complaints_reported_2020: util.parseInt(row.civilian_complaints_reported_2020, false, true),
               civilian_complaints_reported_2021: util.parseInt(row.civilian_complaints_reported_2021, false, true),
+              civilian_complaints_reported_2022: util.parseInt(row.civilian_complaints_reported_2022, false, true),
+              civilian_complaints_reported_2023: util.parseInt(row.civilian_complaints_reported_2023, false, true),
               civilian_complaints_source_link: util.parseURL(row.civilian_complaints_source_link),
               civilian_complaints_source: util.parseString(row.civilian_complaints_source),
               civilian_complaints_sustained: util.parseInt(row.civilian_complaints_sustained, false, true),
@@ -2336,6 +2376,8 @@ module.exports = {
               civilian_complaints_sustained_2019: util.parseInt(row.civilian_complaints_sustained_2019, false, true),
               civilian_complaints_sustained_2020: util.parseInt(row.civilian_complaints_sustained_2020, false, true),
               civilian_complaints_sustained_2021: util.parseInt(row.civilian_complaints_sustained_2021, false, true),
+              civilian_complaints_sustained_2022: util.parseInt(row.civilian_complaints_sustained_2022, false, true),
+              civilian_complaints_sustained_2023: util.parseInt(row.civilian_complaints_sustained_2023, false, true),
               complaints_in_detention_reported: util.parseInt(row.complaints_in_detention_reported, false, true),
               complaints_in_detention_reported_2016: util.parseInt(row.complaints_in_detention_reported_2016, false, true),
               complaints_in_detention_reported_2017: util.parseInt(row.complaints_in_detention_reported_2017, false, true),
@@ -2343,6 +2385,8 @@ module.exports = {
               complaints_in_detention_reported_2019: util.parseInt(row.complaints_in_detention_reported_2019, false, true),
               complaints_in_detention_reported_2020: util.parseInt(row.complaints_in_detention_reported_2020, false, true),
               complaints_in_detention_reported_2021: util.parseInt(row.complaints_in_detention_reported_2021, false, true),
+              complaints_in_detention_reported_2022: util.parseInt(row.complaints_in_detention_reported_2022, false, true),
+              complaints_in_detention_reported_2023: util.parseInt(row.complaints_in_detention_reported_2023, false, true),
               complaints_in_detention_sustained: util.parseInt(row.complaints_in_detention_sustained, false, true),
               complaints_in_detention_sustained_2016: util.parseInt(row.complaints_in_detention_sustained_2016, false, true),
               complaints_in_detention_sustained_2017: util.parseInt(row.complaints_in_detention_sustained_2017, false, true),
@@ -2350,6 +2394,8 @@ module.exports = {
               complaints_in_detention_sustained_2019: util.parseInt(row.complaints_in_detention_sustained_2019, false, true),
               complaints_in_detention_sustained_2020: util.parseInt(row.complaints_in_detention_sustained_2020, false, true),
               complaints_in_detention_sustained_2021: util.parseInt(row.complaints_in_detention_sustained_2021, false, true),
+              complaints_in_detention_sustained_2022: util.parseInt(row.complaints_in_detention_sustained_2022, false, true),
+              complaints_in_detention_sustained_2023: util.parseInt(row.complaints_in_detention_sustained_2023, false, true),
               criminal_complaints_reported: util.parseInt(row.criminal_complaints_reported, false, true),
               criminal_complaints_reported_2016: util.parseInt(row.criminal_complaints_reported_2016, false, true),
               criminal_complaints_reported_2017: util.parseInt(row.criminal_complaints_reported_2017, false, true),
@@ -2357,6 +2403,8 @@ module.exports = {
               criminal_complaints_reported_2019: util.parseInt(row.criminal_complaints_reported_2019, false, true),
               criminal_complaints_reported_2020: util.parseInt(row.criminal_complaints_reported_2020, false, true),
               criminal_complaints_reported_2021: util.parseInt(row.criminal_complaints_reported_2021, false, true),
+              criminal_complaints_reported_2022: util.parseInt(row.criminal_complaints_reported_2022, false, true),
+              criminal_complaints_reported_2023: util.parseInt(row.criminal_complaints_reported_2023, false, true),
               criminal_complaints_sustained: util.parseInt(row.criminal_complaints_sustained, false, true),
               criminal_complaints_sustained_2016: util.parseInt(row.criminal_complaints_sustained_2016, false, true),
               criminal_complaints_sustained_2017: util.parseInt(row.criminal_complaints_sustained_2017, false, true),
@@ -2364,6 +2412,8 @@ module.exports = {
               criminal_complaints_sustained_2019: util.parseInt(row.criminal_complaints_sustained_2019, false, true),
               criminal_complaints_sustained_2020: util.parseInt(row.criminal_complaints_sustained_2020, false, true),
               criminal_complaints_sustained_2021: util.parseInt(row.criminal_complaints_sustained_2021, false, true),
+              criminal_complaints_sustained_2022: util.parseInt(row.criminal_complaints_sustained_2022, false, true),
+              criminal_complaints_sustained_2023: util.parseInt(row.criminal_complaints_sustained_2023, false, true),
               discrimination_complaints_reported: util.parseInt(row.discrimination_complaints_reported, false, true),
               discrimination_complaints_reported_2016: util.parseInt(row.discrimination_complaints_reported_2016, false, true),
               discrimination_complaints_reported_2017: util.parseInt(row.discrimination_complaints_reported_2017, false, true),
@@ -2371,6 +2421,8 @@ module.exports = {
               discrimination_complaints_reported_2019: util.parseInt(row.discrimination_complaints_reported_2019, false, true),
               discrimination_complaints_reported_2020: util.parseInt(row.discrimination_complaints_reported_2020, false, true),
               discrimination_complaints_reported_2021: util.parseInt(row.discrimination_complaints_reported_2021, false, true),
+              discrimination_complaints_reported_2022: util.parseInt(row.discrimination_complaints_reported_2022, false, true),
+              discrimination_complaints_reported_2023: util.parseInt(row.discrimination_complaints_reported_2023, false, true),
               discrimination_complaints_sustained: util.parseInt(row.discrimination_complaints_sustained, false, true),
               discrimination_complaints_sustained_2016: util.parseInt(row.discrimination_complaints_sustained_2016, false, true),
               discrimination_complaints_sustained_2017: util.parseInt(row.discrimination_complaints_sustained_2017, false, true),
@@ -2378,6 +2430,8 @@ module.exports = {
               discrimination_complaints_sustained_2019: util.parseInt(row.discrimination_complaints_sustained_2019, false, true),
               discrimination_complaints_sustained_2020: util.parseInt(row.discrimination_complaints_sustained_2020, false, true),
               discrimination_complaints_sustained_2021: util.parseInt(row.discrimination_complaints_sustained_2021, false, true),
+              discrimination_complaints_sustained_2022: util.parseInt(row.discrimination_complaints_sustained_2022, false, true),
+              discrimination_complaints_sustained_2023: util.parseInt(row.discrimination_complaints_sustained_2023, false, true),
               use_of_force_complaints_reported: util.parseInt(row.use_of_force_complaints_reported, false, true),
               use_of_force_complaints_reported_2016: util.parseInt(row.use_of_force_complaints_reported_2016, false, true),
               use_of_force_complaints_reported_2017: util.parseInt(row.use_of_force_complaints_reported_2017, false, true),
@@ -2385,6 +2439,8 @@ module.exports = {
               use_of_force_complaints_reported_2019: util.parseInt(row.use_of_force_complaints_reported_2019, false, true),
               use_of_force_complaints_reported_2020: util.parseInt(row.use_of_force_complaints_reported_2020, false, true),
               use_of_force_complaints_reported_2021: util.parseInt(row.use_of_force_complaints_reported_2021, false, true),
+              use_of_force_complaints_reported_2022: util.parseInt(row.use_of_force_complaints_reported_2022, false, true),
+              use_of_force_complaints_reported_2023: util.parseInt(row.use_of_force_complaints_reported_2023, false, true),
               use_of_force_complaints_sustained: util.parseInt(row.use_of_force_complaints_sustained, false, true),
               use_of_force_complaints_sustained_2016: util.parseInt(row.use_of_force_complaints_sustained_2016, false, true),
               use_of_force_complaints_sustained_2017: util.parseInt(row.use_of_force_complaints_sustained_2017, false, true),
@@ -2392,6 +2448,8 @@ module.exports = {
               use_of_force_complaints_sustained_2019: util.parseInt(row.use_of_force_complaints_sustained_2019, false, true),
               use_of_force_complaints_sustained_2020: util.parseInt(row.use_of_force_complaints_sustained_2020, false, true),
               use_of_force_complaints_sustained_2021: util.parseInt(row.use_of_force_complaints_sustained_2021, false, true),
+              use_of_force_complaints_sustained_2022: util.parseInt(row.use_of_force_complaints_sustained_2022, false, true),
+              use_of_force_complaints_sustained_2023: util.parseInt(row.use_of_force_complaints_sustained_2023, false, true),
               years_of_complaints_data: util.parseString(row.years_of_complaints_data)
             },
             police_funding: {
@@ -2413,6 +2471,7 @@ module.exports = {
               corrections_budget_2020: util.parseInt(row.corrections_budget_2020, false, true),
               corrections_budget_2021: util.parseInt(row.corrections_budget_2021, false, true),
               corrections_budget_2022: util.parseInt(row.corrections_budget_2022, false, true),
+              corrections_budget_2023: util.parseInt(row.corrections_budget_2023, false, true),
               fines_forfeitures_2010: util.parseInt(row.fines_forfeitures_2010, false, true),
               fines_forfeitures_2011: util.parseInt(row.fines_forfeitures_2011, false, true),
               fines_forfeitures_2012: util.parseInt(row.fines_forfeitures_2012, false, true),
@@ -2426,6 +2485,7 @@ module.exports = {
               fines_forfeitures_2020: util.parseInt(row.fines_forfeitures_2020, false, true),
               fines_forfeitures_2021: util.parseInt(row.fines_forfeitures_2021, false, true),
               fines_forfeitures_2022: util.parseInt(row.fines_forfeitures_2022, false, true),
+              fines_forfeitures_2023: util.parseInt(row.fines_forfeitures_2023, false, true),
               fines_forfeitures_per_resident: util.parseFloat(row.calc_fines_forfeitures_per_resident, false, true),
               health_budget_2010: util.parseInt(row.health_budget_2010, false, true),
               health_budget_2011: util.parseInt(row.health_budget_2011, false, true),
@@ -2440,6 +2500,7 @@ module.exports = {
               health_budget_2020: util.parseInt(row.health_budget_2020, false, true),
               health_budget_2021: util.parseInt(row.health_budget_2021, false, true),
               health_budget_2022: util.parseInt(row.health_budget_2022, false, true),
+              health_budget_2023: util.parseInt(row.health_budget_2023, false, true),
               health_budget: util.parseInt(row.health_budget, false, true),
               housing_budget_2010: util.parseInt(row.housing_budget_2010, false, true),
               housing_budget_2011: util.parseInt(row.housing_budget_2011, false, true),
@@ -2454,6 +2515,7 @@ module.exports = {
               housing_budget_2020: util.parseInt(row.housing_budget_2020, false, true),
               housing_budget_2021: util.parseInt(row.housing_budget_2021, false, true),
               housing_budget_2022: util.parseInt(row.housing_budget_2022, false, true),
+              housing_budget_2023: util.parseInt(row.housing_budget_2023, false, true),
               housing_budget: util.parseInt(row.housing_budget, false, true),
               misconduct_settlement_source_name: util.parseString(row.misconduct_settlement_source_name),
               misconduct_settlement_source: util.parseURL(row.misconduct_settlement_source),
@@ -2476,6 +2538,7 @@ module.exports = {
               police_budget_2020: util.parseInt(row.police_budget_2020, false, true),
               police_budget_2021: util.parseInt(row.police_budget_2021, false, true),
               police_budget_2022: util.parseInt(row.police_budget_2022, false, true),
+              police_budget_2023: util.parseInt(row.police_budget_2023, false, true),
               police_budget: util.parseInt(row.police_budget, false, true),
               police_spending_ratio: util.parseFloat(row.calc_police_spending_ratio, false, true),
               total_budget_2010: util.parseInt(row.total_budget_2010, false, true),
@@ -2491,6 +2554,7 @@ module.exports = {
               total_budget_2020: util.parseInt(row.total_budget_2020, false, true),
               total_budget_2021: util.parseInt(row.total_budget_2021, false, true),
               total_budget_2022: util.parseInt(row.total_budget_2022, false, true),
+              total_budget_2023: util.parseInt(row.total_budget_2023, false, true),
               total_budget: util.parseInt(row.total_budget, false, true),
               total_officers_2013: util.parseInt(row.total_officers_2013, false, true),
               total_officers_2014: util.parseInt(row.total_officers_2014, false, true),
@@ -2502,6 +2566,7 @@ module.exports = {
               total_officers_2020: util.parseInt(row.total_officers_2020, false, true),
               total_officers_2021: util.parseInt(row.total_officers_2021, false, true),
               total_officers_2022: util.parseInt(row.total_officers_2022, false, true),
+              total_officers_2023: util.parseInt(row.total_officers_2023, false, true),
               year_misconduct_settlement_data: util.parseString(row.year_misconduct_settlement_data)
             },
             police_violence: {
@@ -2521,6 +2586,7 @@ module.exports = {
               less_lethal_force_2020: util.parseInt(row.less_lethal_force_2020, false, true),
               less_lethal_force_2021: util.parseInt(row.less_lethal_force_2021, false, true),
               less_lethal_force_2022: util.parseInt(row.less_lethal_force_2022, false, true),
+              less_lethal_force_2023: util.parseInt(row.less_lethal_force_2023, false, true),
               native_american_people_killed: util.parseInt(row.native_american_people_killed, false, true),
               other_people_killed: util.parseInt(row.other_people_killed, false, true),
               people_killed_or_injured_armed_with_gun: util.parseInt(row.people_killed_or_injured_armed_with_gun, false, true),
@@ -2543,6 +2609,7 @@ module.exports = {
               police_shootings_2020: util.parseInt(row.police_shootings_2020, false, true),
               police_shootings_2021: util.parseInt(row.police_shootings_2021, false, true),
               police_shootings_2022: util.parseInt(row.police_shootings_2022, false, true),
+              police_shootings_2023: util.parseInt(row.police_shootings_2023, false, true),
               police_shootings_per_arrest: util.parseFloat(row.calc_police_shootings_per_arrest, false, true),
               shot_first: util.parseInt(row.shot_first, false, true),
               unarmed_people_killed: util.parseInt(row.unarmed_people_killed, false, true),
@@ -2557,6 +2624,8 @@ module.exports = {
               taser_2019: util.parseInt(row.taser_2019, false, true),
               taser_2020: util.parseInt(row.taser_2020, false, true),
               taser_2021: util.parseInt(row.taser_2021, false, true),
+              taser_2022: util.parseInt(row.taser_2022, false, true),
+              taser_2023: util.parseInt(row.taser_2023, false, true),
               impact_weapons_and_projectiles_2013: util.parseInt(row.impact_weapons_and_projectiles_2013, false, true),
               impact_weapons_and_projectiles_2014: util.parseInt(row.impact_weapons_and_projectiles_2014, false, true),
               impact_weapons_and_projectiles_2015: util.parseInt(row.impact_weapons_and_projectiles_2015, false, true),
@@ -2566,6 +2635,8 @@ module.exports = {
               impact_weapons_and_projectiles_2019: util.parseInt(row.impact_weapons_and_projectiles_2019, false, true),
               impact_weapons_and_projectiles_2020: util.parseInt(row.impact_weapons_and_projectiles_2020, false, true),
               impact_weapons_and_projectiles_2021: util.parseInt(row.impact_weapons_and_projectiles_2021, false, true),
+              impact_weapons_and_projectiles_2022: util.parseInt(row.impact_weapons_and_projectiles_2022, false, true),
+              impact_weapons_and_projectiles_2023: util.parseInt(row.impact_weapons_and_projectiles_2023, false, true),
               neck_restraints_2013: util.parseInt(row.neck_restraints_2013, false, true),
               neck_restraints_2014: util.parseInt(row.neck_restraints_2014, false, true),
               neck_restraints_2015: util.parseInt(row.neck_restraints_2015, false, true),
@@ -2575,6 +2646,8 @@ module.exports = {
               neck_restraints_2019: util.parseInt(row.neck_restraints_2019, false, true),
               neck_restraints_2020: util.parseInt(row.neck_restraints_2020, false, true),
               neck_restraints_2021: util.parseInt(row.neck_restraints_2021, false, true),
+              neck_restraints_2022: util.parseInt(row.neck_restraints_2022, false, true),
+              neck_restraints_2023: util.parseInt(row.neck_restraints_2023, false, true),
               chemical_spray_2013: util.parseInt(row.chemical_spray_2013, false, true),
               chemical_spray_2014: util.parseInt(row.chemical_spray_2014, false, true),
               chemical_spray_2015: util.parseInt(row.chemical_spray_2015, false, true),
@@ -2584,6 +2657,8 @@ module.exports = {
               chemical_spray_2019: util.parseInt(row.chemical_spray_2019, false, true),
               chemical_spray_2020: util.parseInt(row.chemical_spray_2020, false, true),
               chemical_spray_2021: util.parseInt(row.chemical_spray_2021, false, true),
+              chemical_spray_2022: util.parseInt(row.chemical_spray_2022, false, true),
+              chemical_spray_2023: util.parseInt(row.chemical_spray_2023, false, true),
               K9_deployments_2013: util.parseInt(row.K9_deployments_2013, false, true),
               K9_deployments_2014: util.parseInt(row.K9_deployments_2014, false, true),
               K9_deployments_2015: util.parseInt(row.K9_deployments_2015, false, true),
@@ -2592,7 +2667,9 @@ module.exports = {
               K9_deployments_2018: util.parseInt(row.K9_deployments_2018, false, true),
               K9_deployments_2019: util.parseInt(row.K9_deployments_2019, false, true),
               K9_deployments_2020: util.parseInt(row.K9_deployments_2020, false, true),
-              K9_deployments_2021: util.parseInt(row.K9_deployments_2021, false, true)
+              K9_deployments_2021: util.parseInt(row.K9_deployments_2021, false, true),
+              K9_deployments_2022: util.parseInt(row.K9_deployments_2022, false, true),
+              K9_deployments_2023: util.parseInt(row.K9_deployments_2023, false, true)
             },
             policy: {
               bans_chokeholds_and_strangleholds: util.parseBoolean(row.bans_chokeholds_and_strangleholds),

@@ -12,28 +12,11 @@
       "**/CVS": true,
       "**/.DS_Store": true,
       "**/Thumbs.db": true,
-      "**/*.git": true,
-      ".github": true,
-      ".nyc_output": true,
-      ".vscode": true,
-      "coverage": true,
-      "node_modules": true,
-      ".dockerignore": true,
-      "doc-conf.json": true,
-      "docker-compose.yml": true,
-      "LICENSE": true,
-      "dredd.yml": true,
-      "Dockerfile": true,
-      "circle.yml": true,
-      "apiary.apib": true,
-      ".nvmrc": true,
-      ".gitignore": true,
-      ".editorconfig": true,
-      ".eslintignore": true,
-      ".sequelizerc": true,
-      "api.code-workspace": true,
-      "package-lock.json": true
+      "**/*.git": true
     },
-		"explorerExclude.backup": {}
+		"explorerExclude.backup": {},
+		"cSpell.words": [
+			"LOGLEVEL"
+		]
 	}
 }

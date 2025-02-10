@@ -60,6 +60,17 @@ if test -f "$PATH_API/app/config/production.json"; then
     fi
 fi
 
+if test -f "$PATH_API/app/config/docker.json"; then
+    IS_DEVELOPMENT=true
+    APP_ENV="docker"
+
+    CONFIG_PORT=$(cat $PATH_API/app/config/docker.json | grep port | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+
+    if [[ -n $CONFIG_PORT ]]; then
+      API_PORT=$CONFIG_PORT
+    fi
+fi
+
 export API_NODE_ENV=$APP_ENV
 
 __make_header(){
