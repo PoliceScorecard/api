@@ -1,4 +1,4 @@
-FROM node:12.12.0
+FROM --platform=linux/x86_64 node:12.12.0
 LABEL maintainer "Peter Schmalfeldt me@peterschmalfeldt.com"
 LABEL version="1.0"
 LABEL description="Local Development of API"
@@ -36,7 +36,7 @@ USER root
 RUN npm install -g forever
 RUN npm install -g sequelize-cli
 
-COPY package.json package-lock.json ./
+COPY package.json ./
 COPY .eslintrc.js ./
 COPY .eslintignore ./
 COPY .sequelizerc ./
@@ -49,3 +49,5 @@ RUN chmod 755 ./scripts/docker-compose/*.sh
 RUN chown -R developer:developer /home/developer/api
 
 USER developer
+
+EXPOSE 5001

@@ -15,7 +15,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/token",
+							"raw": "http://localhost:5001/v1/token",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -43,7 +43,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/refresh",
+							"raw": "http://localhost:5001/v1/user/refresh",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -133,7 +133,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/user/register/",
+							"raw": "http://localhost:5001/v1/user/register/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -216,7 +216,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/register/",
+									"raw": "http://localhost:5001/v1/user/register/",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -349,7 +349,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/register/",
+									"raw": "http://localhost:5001/v1/user/register/",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -423,7 +423,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/confirm/account?key=vg6deYc9G87c",
+							"raw": "http://localhost:5001/v1/user/confirm/account?key=vg6deYc9G87c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -452,7 +452,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/confirm/account?key=vg6deYc9G87c",
+									"raw": "http://localhost:5001/v1/user/confirm/account?key=vg6deYc9G87c",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -531,7 +531,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/confirm/account?key=vg6deYc9G87c",
+									"raw": "http://localhost:5001/v1/user/confirm/account?key=vg6deYc9G87c",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -612,7 +612,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/confirm/email?key=W8cj0gpa0Gcs",
+							"raw": "http://localhost:5001/v1/user/confirm/email?key=W8cj0gpa0Gcs",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -641,7 +641,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/confirm/email?key=W8cj0gpa0Gcs",
+									"raw": "http://localhost:5001/v1/user/confirm/email?key=W8cj0gpa0Gcs",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -724,7 +724,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/confirm/email?key=W8cj0gpa0Gcs",
+									"raw": "http://localhost:5001/v1/user/confirm/email?key=W8cj0gpa0Gcs",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -805,7 +805,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/confirm/password?key=W8cj0gpa0Gcs",
+							"raw": "http://localhost:5001/v1/user/confirm/password?key=W8cj0gpa0Gcs",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -834,7 +834,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/confirm/password?key=W8cj0gpa0Gcs",
+									"raw": "http://localhost:5001/v1/user/confirm/password?key=W8cj0gpa0Gcs",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -917,7 +917,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/confirm/password?key=W8cj0gpa0Gcs",
+									"raw": "http://localhost:5001/v1/user/confirm/password?key=W8cj0gpa0Gcs",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1022,7 +1022,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/user/login",
+							"raw": "http://localhost:5001/v1/user/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1067,7 +1067,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/login",
+									"raw": "http://localhost:5001/v1/user/login",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1166,7 +1166,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/login",
+									"raw": "http://localhost:5001/v1/user/login",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1250,7 +1250,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/logout",
+							"raw": "http://localhost:5001/v1/user/logout",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1278,7 +1278,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/logout",
+									"raw": "http://localhost:5001/v1/user/logout",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1360,7 +1360,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/logout",
+									"raw": "http://localhost:5001/v1/user/logout",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1455,7 +1455,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/user/forgot-password",
+							"raw": "http://localhost:5001/v1/user/forgot-password",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1494,7 +1494,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/forgot-password",
+									"raw": "http://localhost:5001/v1/user/forgot-password",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1587,7 +1587,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/forgot-password",
+									"raw": "http://localhost:5001/v1/user/forgot-password",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1694,7 +1694,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/user/reset-password",
+							"raw": "http://localhost:5001/v1/user/reset-password",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1745,7 +1745,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/reset-password",
+									"raw": "http://localhost:5001/v1/user/reset-password",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1846,7 +1846,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/reset-password",
+									"raw": "http://localhost:5001/v1/user/reset-password",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1919,7 +1919,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/resend-confirmation/:id",
+							"raw": "http://localhost:5001/v1/user/resend-confirmation/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1948,7 +1948,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/resend-confirmation/:id",
+									"raw": "http://localhost:5001/v1/user/resend-confirmation/:id",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -2027,7 +2027,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/resend-confirmation/:id",
+									"raw": "http://localhost:5001/v1/user/resend-confirmation/:id",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -2135,7 +2135,7 @@
 								{
 									"key": "password",
 									"value": "abc123",
-									"description": "(required, string) - Current Account Passsword ( required to make any changes on this endpoint )",
+									"description": "(required, string) - Current Account Password ( required to make any changes on this endpoint )",
 									"type": "text"
 								},
 								{
@@ -2168,7 +2168,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/user/update",
+							"raw": "http://localhost:5001/v1/user/update",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2180,7 +2180,7 @@
 								"update"
 							]
 						},
-						"description": "This endpoint will allow the logged in user to update their own account.  This uses the current Authentication Bearer Token to lookup who's account to update.\n\nThe Bearer Token is created during login and contains the users ID from our database.  You will not be able to use this endpoint to manage anyone elses account except your own.\n\nIMPORTANT NOTES ABOUT THIS ENDPOINT:\n\n1. Changing the username will immediatley make the old username available to the world for use.  We do check to make sure that the new username being requested is available.\n\n2. We do not immediatley change the email when requested.  Instead we send a confirmation email to both the new and old email to confirm the requested change.\n\n3. We do not immediatley change the password when requested.  We first send a confirmation email to the users current email to confirm that they made the requested change."
+						"description": "This endpoint will allow the logged in user to update their own account.  This uses the current Authentication Bearer Token to lookup who's account to update.\n\nThe Bearer Token is created during login and contains the users ID from our database.  You will not be able to use this endpoint to manage anyone elses account except your own.\n\nIMPORTANT NOTES ABOUT THIS ENDPOINT:\n\n1. Changing the username will immediately make the old username available to the world for use.  We do check to make sure that the new username being requested is available.\n\n2. We do not immediately change the email when requested.  Instead we send a confirmation email to both the new and old email to confirm the requested change.\n\n3. We do not immediately change the password when requested.  We first send a confirmation email to the users current email to confirm that they made the requested change."
 					},
 					"response": [
 						{
@@ -2212,7 +2212,7 @@
 										{
 											"key": "password",
 											"value": "abc123",
-											"description": "(required, string) - Current Account Passsword ( required to make any changes on this endpoint )",
+											"description": "(required, string) - Current Account Password ( required to make any changes on this endpoint )",
 											"type": "text"
 										},
 										{
@@ -2245,7 +2245,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/update",
+									"raw": "http://localhost:5001/v1/user/update",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -2343,7 +2343,7 @@
 										{
 											"key": "password",
 											"value": "abc123",
-											"description": "(required, string) - Current Account Passsword ( required to make any changes on this endpoint )",
+											"description": "(required, string) - Current Account Password ( required to make any changes on this endpoint )",
 											"type": "text"
 										},
 										{
@@ -2376,7 +2376,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/update",
+									"raw": "http://localhost:5001/v1/user/update",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -2478,7 +2478,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/user/delete",
+							"raw": "http://localhost:5001/v1/user/delete",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2528,7 +2528,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/delete",
+									"raw": "http://localhost:5001/v1/user/delete",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -2628,7 +2628,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/user/delete",
+									"raw": "http://localhost:5001/v1/user/delete",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -2708,7 +2708,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/:username/profile",
+							"raw": "http://localhost:5001/v1/user/:username/profile",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2737,7 +2737,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/:username/profile",
+									"raw": "http://localhost:5001/v1/user/:username/profile",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -2816,7 +2816,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/:username/profile",
+									"raw": "http://localhost:5001/v1/user/:username/profile",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -2907,7 +2907,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/:username/follow",
+							"raw": "http://localhost:5001/v1/user/:username/follow",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2942,7 +2942,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/:username/follow",
+									"raw": "http://localhost:5001/v1/user/:username/follow",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -3027,7 +3027,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/:username/follow",
+									"raw": "http://localhost:5001/v1/user/:username/follow",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -3114,7 +3114,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/:username/unfollow",
+							"raw": "http://localhost:5001/v1/user/:username/unfollow",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3149,7 +3149,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/:username/unfollow",
+									"raw": "http://localhost:5001/v1/user/:username/unfollow",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -3234,7 +3234,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/:username/unfollow",
+									"raw": "http://localhost:5001/v1/user/:username/unfollow",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -3321,7 +3321,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/:username/followers",
+							"raw": "http://localhost:5001/v1/user/:username/followers",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3356,7 +3356,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/:username/followers",
+									"raw": "http://localhost:5001/v1/user/:username/followers",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -3445,7 +3445,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/:username/followers",
+									"raw": "http://localhost:5001/v1/user/:username/followers",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -3536,7 +3536,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/:username/following",
+							"raw": "http://localhost:5001/v1/user/:username/following",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3571,7 +3571,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/:username/following",
+									"raw": "http://localhost:5001/v1/user/:username/following",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -3660,7 +3660,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/:username/following",
+									"raw": "http://localhost:5001/v1/user/:username/following",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -3741,7 +3741,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/user/invite/:key",
+							"raw": "http://localhost:5001/v1/user/invite/:key",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3769,7 +3769,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/invite/:key",
+									"raw": "http://localhost:5001/v1/user/invite/:key",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -3851,7 +3851,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/user/invite/:key",
+									"raw": "http://localhost:5001/v1/user/invite/:key",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -3944,7 +3944,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:5000/v1/settings",
+							"raw": "http://localhost:5001/v1/settings",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -3970,7 +3970,7 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:5000/v1/settings",
+									"raw": "http://localhost:5001/v1/settings",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -4105,7 +4105,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/settings/profile",
+							"raw": "http://localhost:5001/v1/settings/profile",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4185,7 +4185,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/settings/profile",
+									"raw": "http://localhost:5001/v1/settings/profile",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -4320,7 +4320,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/settings/profile",
+									"raw": "http://localhost:5001/v1/settings/profile",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -4446,7 +4446,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/settings/social-links",
+							"raw": "http://localhost:5001/v1/settings/social-links",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4521,7 +4521,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/settings/social-links",
+									"raw": "http://localhost:5001/v1/settings/social-links",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -4649,7 +4649,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/settings/social-links",
+									"raw": "http://localhost:5001/v1/settings/social-links",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -4773,7 +4773,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/settings/email-notifications",
+							"raw": "http://localhost:5001/v1/settings/email-notifications",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -4841,7 +4841,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/settings/email-notifications",
+									"raw": "http://localhost:5001/v1/settings/email-notifications",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -4960,7 +4960,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/settings/email-notifications",
+									"raw": "http://localhost:5001/v1/settings/email-notifications",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -5080,7 +5080,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/v1/settings/web-notifications",
+							"raw": "http://localhost:5001/v1/settings/web-notifications",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -5149,7 +5149,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/settings/web-notifications",
+									"raw": "http://localhost:5001/v1/settings/web-notifications",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -5271,7 +5271,7 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:5000/v1/settings/web-notifications",
+									"raw": "http://localhost:5001/v1/settings/web-notifications",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -5355,7 +5355,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/categories",
+							"raw": "http://localhost:5001/v1/categories",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -5376,7 +5376,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/tags",
+							"raw": "http://localhost:5001/v1/tags",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -5404,7 +5404,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/report/:state/:type/:location",
+							"raw": "http://localhost:5001/v1/scorecard/report/:state/:type/:location",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -5445,7 +5445,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/report/:state/:type/:location",
+									"raw": "http://localhost:5001/v1/scorecard/report/:state/:type/:location",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -5552,7 +5552,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/report/:state/:type/:location",
+									"raw": "http://localhost:5001/v1/scorecard/report/:state/:type/:location",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -5661,7 +5661,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/state/:state",
+							"raw": "http://localhost:5001/v1/scorecard/state/:state",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -5690,7 +5690,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/state/:state",
+									"raw": "http://localhost:5001/v1/scorecard/state/:state",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -5785,7 +5785,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/state/:state",
+									"raw": "http://localhost:5001/v1/scorecard/state/:state",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -5882,7 +5882,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/states",
+							"raw": "http://localhost:5001/v1/scorecard/states",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -5903,7 +5903,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/states",
+									"raw": "http://localhost:5001/v1/scorecard/states",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -6002,7 +6002,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/map",
+							"raw": "http://localhost:5001/v1/scorecard/map",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -6023,7 +6023,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/map",
+									"raw": "http://localhost:5001/v1/scorecard/map",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -6115,7 +6115,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/map/us/police-department",
+							"raw": "http://localhost:5001/v1/scorecard/map/us/police-department",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -6138,7 +6138,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/map/us/police-department",
+									"raw": "http://localhost:5001/v1/scorecard/map/us/police-department",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -6232,7 +6232,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/map/us/sheriff",
+							"raw": "http://localhost:5001/v1/scorecard/map/us/sheriff",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -6255,7 +6255,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/map/us/sheriff",
+									"raw": "http://localhost:5001/v1/scorecard/map/us/sheriff",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -6349,7 +6349,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/map/ca",
+							"raw": "http://localhost:5001/v1/scorecard/map/ca",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -6371,7 +6371,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/map/ca",
+									"raw": "http://localhost:5001/v1/scorecard/map/ca",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -6464,7 +6464,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/map/ca/police-department",
+							"raw": "http://localhost:5001/v1/scorecard/map/ca/police-department",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -6487,7 +6487,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/map/ca/police-department",
+									"raw": "http://localhost:5001/v1/scorecard/map/ca/police-department",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -6581,7 +6581,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/map/ca/sheriff",
+							"raw": "http://localhost:5001/v1/scorecard/map/ca/sheriff",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -6604,7 +6604,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/map/ca/sheriff",
+									"raw": "http://localhost:5001/v1/scorecard/map/ca/sheriff",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -6698,7 +6698,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/map/ca/police-department/los-angeles",
+							"raw": "http://localhost:5001/v1/scorecard/map/ca/police-department/los-angeles",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -6722,7 +6722,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/map/ca/police-department/los-angeles",
+									"raw": "http://localhost:5001/v1/scorecard/map/ca/police-department/los-angeles",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -6817,7 +6817,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/map/ca/sheriff/los-angeles",
+							"raw": "http://localhost:5001/v1/scorecard/map/ca/sheriff/los-angeles",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -6841,7 +6841,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/map/ca/sheriff/los-angeles",
+									"raw": "http://localhost:5001/v1/scorecard/map/ca/sheriff/los-angeles",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -6932,7 +6932,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/scorecard/map/ca/sheriff/los-angeles?format=geojson",
+							"raw": "http://localhost:5001/v1/scorecard/map/ca/sheriff/los-angeles?format=geojson",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -6963,7 +6963,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/scorecard/map/ca/sheriff/los-angeles?format=geojson",
+									"raw": "http://localhost:5001/v1/scorecard/map/ca/sheriff/los-angeles?format=geojson",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -7069,7 +7069,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/v1/geo/states",
+							"raw": "http://localhost:5001/v1/geo/states",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -7090,7 +7090,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5000/v1/geo/states",
+									"raw": "http://localhost:5001/v1/geo/states",
 									"protocol": "http",
 									"host": [
 										"localhost"
