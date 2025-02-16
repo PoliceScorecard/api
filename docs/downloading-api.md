@@ -1,7 +1,6 @@
 **[↤ Developer Overview](../README.md)**
 
-Downloading API
-===
+# Downloading API
 
 You can download this API using the code below ( this assumes you have [SSH integrated with Github](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) ):
 
@@ -11,8 +10,7 @@ git clone git@github.com:policescorecard/api.git .
 npm install --build-from-resource --no-optional
 ```
 
-Create API Key(s)
----
+## Create API Key(s)
 
 In order to prevent shipping this API with API Keys in the source code, we opted for another solution. A seeder file that is
 ignored by the source code that you can leave on your installation to store custom API keys for whomever you wish.

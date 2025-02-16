@@ -1,9 +1,8 @@
 **[↤ Developer Overview](../README.md)**
 
-MySQL Configuration
-===
+# MySQL Configuration
 
-#### Start / Stop
+## Start / Stop
 
 For MacOS you can run the following:
 

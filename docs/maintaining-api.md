@@ -1,7 +1,6 @@
 **[↤ Developer Overview](../README.md)**
 
-Maintaining API
-===
+# Maintaining API
 
 This project uses `npm shrinkwrap` to lock down dependencies so we're better guarded against breaking changes to public packages. If you need to add or update a dependency, in addition updating `package.json` you'll also need to run the following:
 
