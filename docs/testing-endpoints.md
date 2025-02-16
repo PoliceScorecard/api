@@ -1,7 +1,6 @@
 **[↤ Developer Overview](../README.md)**
 
-Testing Endpoints with Postman
-===
+# Testing Endpoints with Postman
 
 > Quickly and easily test API requests directly within Postman.
 
@@ -9,12 +8,11 @@ Testing Endpoints with Postman
 
 [![Install Chrome](https://img.shields.io/badge/Download-Postman-fd6c35.svg?style=for-the-badge)](https://www.getpostman.com/downloads/)
 
-Setup:
----
+## Setup
 
 Once you have Postman installed and open, you will want to import our handy collection of API requests.  These requests are setup to support each of our API's endpoints, allowing you to more easily test your local API during the development process.
 
-#### Step #1. Import API Collection
+### Step #1. Import API Collection
 
 With Postman Open, go to `File > Import ...`
 
@@ -28,14 +26,13 @@ Find the `api.postman_collection.json` in the root of this project, and drop it 
 
 NOTE: If you are prompted that you already have this collection installed, you should likely replace it with the latest version in this repo.
 
-
-#### Step #3. Collection Requests
+### Step #2. Run API
 
 You will need to make sure you have your local developer API setup and running.  Once you do, you can use the newly imported Collection to automate testing our API endpoints.
 
 If you need help getting the API setup, see our [Developer Overview](../README.md).
 
-#### Step #3. Collection Requests
+### Step #3. Collection Requests
 
 Now you should see a new `Police Scorecard API` collection in the left menu.  This collection matches the structure of our developer [Apiary Documentation](https://policescorecard.docs.apiary.io/).
 

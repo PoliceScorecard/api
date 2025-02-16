@@ -16,3 +16,4 @@ node_modules
 app/data/*.csv
 preview.html
 !api.code-workspace
+scorecard.csv

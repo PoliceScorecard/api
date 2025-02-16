@@ -1,7 +1,6 @@
 **[↤ Developer Overview](../README.md)**
 
-Server Configuration
-===
+# Server Configuration
 
 This API requires a configuration file in the `./app/config/` folder based on the environment you are in.
 
@@ -23,13 +22,13 @@ You can also use Environmental Variables rather than a config file, if that is e
 nano ~/.bash_profile
 ```
 
-#### API Environmental Variables
+## API Environmental Variables
 
 ```bash
 export API_DEV_FLAG_BUGSNAG=true;
 export API_DEV_FLAG_ANALYTICS=true;
 export API_API_DATABASE='CHANGE_ME';
-export API_API_HOST='locahost';
+export API_API_HOST='localhost';
 export API_API_PASSWORD='CHANGE_ME';
 export API_API_USERNAME='CHANGE_ME';
 export API_API_VERSION='v1'

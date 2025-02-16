@@ -1,7 +1,6 @@
 **[↤ Developer Overview](../README.md)**
 
-Development Scripts
-===
+# Development Scripts
 
 API Development Scripts:
 
@@ -19,7 +18,7 @@ API Development Scripts:
 | `npm run coverage`             | Generate Code Coverage Reports and Run Unit Tests                                                   |
 | `npm run check-coverage`       | Check Coverage Reports against Minimum Requirements                                                 |
 | `npm run migrate`              | Migrate to Latest Database Schema                                                                   |
-| `npm run migrate:create  `     | Create new Migration Template file in `./app/seeders` folder                                        |
+| `npm run migrate:create`       | Create new Migration Template file in `./app/seeders` folder                                        |
 | `npm run migrate:rollback`     | Roll Back Migration Changes                                                                         |
 | `npm run seed`                 | Run Seeders in `./app/seeders` folder                                                               |
 | `npm run seed:create`          | Create new Seeder Template file in `./app/seeders` folder                                           |
@@ -31,16 +30,14 @@ API Development Scripts:
 | `npm run prepublish`           | Runs any commands necessary before publishing API                                                   |
 | `npm run postinstall`          | This runs automatically after running `npm install`                                                 |
 
+**See all scripts:**
 
-#### See all scripts
-
-```
+```bash
 npm run help
 ```
 
+## Filter scripts
 
-#### Filter scripts
-
-```
+```bash
 npm run help [regex]
 ```

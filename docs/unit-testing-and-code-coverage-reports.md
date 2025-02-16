@@ -1,9 +1,8 @@
 **[↤ Developer Overview](../README.md)**
 
-Unit Testing and Code Coverage Reports
-===
+# Unit Testing and Code Coverage Reports
 
-#### Unit Tests
+## Unit Tests
 
 Testing is run with [MochaJS](https://mochajs.org/) and uses [ChaiJS](http://chaijs.com/) [assert](http://chaijs.com/api/assert/). All unit tests should go under the `test/` directory and should be named to match up with files in `app/`.
 
@@ -13,7 +12,7 @@ To run unit tests, run:
 npm test
 ```
 
-#### Code Coverage
+## Code Coverage
 
 This will also generate code coverage reports in `./coverage/`.  Unit Tests will automatically fail if Code Coverage reports fall below the following thresholds:
 
@@ -22,6 +21,6 @@ This will also generate code coverage reports in `./coverage/`.  Unit Tests will
 * Functions: 70%
 * Lines: 70%
 
-#### JSDoc Documentation
+## JSDoc Documentation
 
-Documentation is automatically generates everytime you run `npm start` and can be accessed via http://127.0.0.1:5000/docs/.
+Documentation is automatically generates every time you run `npm start` and can be accessed via http://127.0.0.1:5000/docs/.
