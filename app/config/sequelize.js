@@ -15,7 +15,9 @@ const dbOptions = {
   port: config.get('database.api.port'),
   dialect: 'mysql',
   dialectOptions: {
-    supportBigNumbers: true
+    supportBigNumbers: true,
+    decimalNumbers: true,
+    maxPreparedStatements: 100
   },
   logging: false,
   pool: {
