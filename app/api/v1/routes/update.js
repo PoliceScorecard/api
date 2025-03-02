@@ -25,7 +25,7 @@ router.route('/update/scorecard').post((request, response) => {
   const token = md5(request.body.token)
   const cleanImport = (request.body.cleanImport && request.body.cleanImport !== 'false')
 
-  if (token === '5d0f91a00d76444b843046b7c15eb5c2') {
+  if (token === '8c2ac2951297856f0760a3284c3db03e') {
     // Download Scorecard
     UpdateDomain.downloadScorecard().then(() => {
       // Verify CSV is valid before using and get Row Count
