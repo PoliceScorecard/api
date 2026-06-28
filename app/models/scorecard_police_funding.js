@@ -64,6 +64,12 @@ module.exports = (sequelize, DataTypes) => {
     total_officers_2023: {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
+    total_officers_2024: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
+    total_officers_2025: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
     total_budget_2010: {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
@@ -104,6 +110,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
     total_budget_2023: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
+    total_budget_2024: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
+    total_budget_2025: {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
     fines_forfeitures_2010: {
@@ -148,6 +160,12 @@ module.exports = (sequelize, DataTypes) => {
     fines_forfeitures_2023: {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
+    fines_forfeitures_2024: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
+    fines_forfeitures_2025: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
     housing_budget_2010: {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
@@ -188,6 +206,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
     housing_budget_2023: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
+    housing_budget_2024: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
+    housing_budget_2025: {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
     health_budget_2010: {
@@ -232,6 +256,12 @@ module.exports = (sequelize, DataTypes) => {
     health_budget_2023: {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
+    health_budget_2024: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
+    health_budget_2025: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
     police_budget_2010: {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
@@ -272,6 +302,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
     police_budget_2023: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
+    police_budget_2024: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
+    police_budget_2025: {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
     corrections_budget: {
@@ -317,6 +353,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
     corrections_budget_2023: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
+    corrections_budget_2024: {
+      type: DataTypes.BIGINT(20).UNSIGNED
+    },
+    corrections_budget_2025: {
       type: DataTypes.BIGINT(20).UNSIGNED
     },
     budget_source_name: {

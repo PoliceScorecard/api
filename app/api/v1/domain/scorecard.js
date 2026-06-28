@@ -338,6 +338,8 @@ module.exports = {
               complaints_reported_2021: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2021 : null,
               complaints_reported_2022: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2022 : null,
               complaints_reported_2023: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2023 : null,
+              complaints_reported_2024: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2024 : null,
+              complaints_reported_2025: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_reported_2025 : null,
               complaints_sustained: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained : null,
               complaints_sustained_2016: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2016 : null,
               complaints_sustained_2017: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2017 : null,
@@ -347,6 +349,8 @@ module.exports = {
               complaints_sustained_2021: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2021 : null,
               complaints_sustained_2022: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2022 : null,
               complaints_sustained_2023: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2023 : null,
+              complaints_sustained_2024: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2024 : null,
+              complaints_sustained_2025: agency.dataValues.police_accountability ? agency.dataValues.police_accountability.dataValues.civilian_complaints_sustained_2025 : null,
 
               black_population: agency.dataValues.black_population,
               hispanic_population: agency.dataValues.hispanic_population,

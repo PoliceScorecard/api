@@ -256,9 +256,9 @@ const config = convict({
   },
   documents: {
     scorecard: {
-      doc: 'Absolute Path to Scorecard Document scorecard.csv',
+      doc: 'Absolute Path to Scorecard Document app/data/scorecard.csv',
       format: String,
-      default: '/path/to/scorecard.csv',
+      default: './app/data/scorecard.csv',
       env: 'API_DOC_SCORECARD'
     }
   }
