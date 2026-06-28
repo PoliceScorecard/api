@@ -12,6 +12,7 @@
 
 ### Additional Setup without Docker
 
+* [Deploy Update](docs/deploy-update.md)
 * [Getting Setup without Docker](docs/getting-setup-without-docker.md)
 * [Server Configuration](docs/server-configuration.md)
 * [MySQL Configuration](docs/mysql-configuration.md)

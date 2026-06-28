@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(app/config/local.json)",
+      "Read(app/config/staging.json)",
+      "Read(app/config/production.json)",
+      "Bash(git push*)",
+      "Bash(git reset --hard*)",
+      "Bash(git checkout --*)",
+      "Bash(npm run migrate:rollback*)",
+      "Bash(npm run seed*)",
+      "Bash(npm run seed:rollback*)",
+      "Bash(npm run elasticsearch:delete*)",
+      "Bash(./scripts/api.sh reset*)",
+      "Bash(./scripts/api.sh update*)",
+      "Bash(/usr/local/bin/deploy-*)",
+      "Bash(curl *api.policescorecard.org*)",
+      "Bash(curl *apidev.policescorecard.org*)"
+    ]
+  }
+}

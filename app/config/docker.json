@@ -32,6 +32,6 @@
     "type": "DockerAPI"
   },
   "documents": {
-    "scorecard": "/home/developer/api/scorecard.csv"
+    "scorecard": "/home/developer/api/app/data/scorecard.csv"
   }
 }
