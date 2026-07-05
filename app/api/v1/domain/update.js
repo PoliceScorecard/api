@@ -497,7 +497,11 @@ const SCORECARD_COLUMNS = [
   'K9_deployments_2024',
   'K9_deployments_2025',
   'total_officers_2024',
-  'total_officers_2025'
+  'total_officers_2025',
+  'arrests_2024',
+  'arrests_2025',
+  'low_level_arrests_2024',
+  'low_level_arrests_2025'
 ]
 
 const __getRowValue = (row, column, alias) => {
@@ -1246,6 +1250,8 @@ const __calcTotalArrests = (row) => {
   const arrests2021 = util.parseInt(row.arrests_2021, true) || 0
   const arrests2022 = util.parseInt(row.arrests_2022, true) || 0
   const arrests2023 = util.parseInt(row.arrests_2023, true) || 0
+  const arrests2024 = util.parseInt(row.arrests_2024, true) || 0
+  const arrests2025 = util.parseInt(row.arrests_2025, true) || 0
 
   return (
     arrests2013 +
@@ -1258,7 +1264,9 @@ const __calcTotalArrests = (row) => {
     arrests2020 +
     arrests2021 +
     arrests2022 +
-    arrests2023
+    arrests2023 +
+    arrests2024 +
+    arrests2025
   )
 }
 
@@ -1278,6 +1286,8 @@ const __calcTotalLowLevelArrests = (row) => {
   const arrests2021 = util.parseInt(row.low_level_arrests_2021, true) || 0
   const arrests2022 = util.parseInt(row.low_level_arrests_2022, true) || 0
   const arrests2023 = util.parseInt(row.low_level_arrests_2023, true) || 0
+  const arrests2024 = util.parseInt(row.low_level_arrests_2024, true) || 0
+  const arrests2025 = util.parseInt(row.low_level_arrests_2025, true) || 0
 
   return (
     arrests2013 +
@@ -1290,7 +1300,9 @@ const __calcTotalLowLevelArrests = (row) => {
     arrests2020 +
     arrests2021 +
     arrests2022 +
-    arrests2023
+    arrests2023 +
+    arrests2024 +
+    arrests2025
   )
 }
 
@@ -2401,6 +2413,8 @@ module.exports = {
                 arrests_2021: util.parseInt(row.arrests_2021, false, true),
                 arrests_2022: util.parseInt(row.arrests_2022, false, true),
                 arrests_2023: util.parseInt(row.arrests_2023, false, true),
+                arrests_2024: util.parseInt(row.arrests_2025, false, true),
+                arrests_2025: util.parseInt(row.arrests_2025, false, true),
                 asian_pacific_arrests: util.parseInt(row.asian_pacific_arrests, false, true),
                 black_arrests: util.parseInt(row.black_arrests, false, true),
                 black_drug_arrests: util.parseInt(row.black_drug_arrests, false, true),
@@ -2418,6 +2432,8 @@ module.exports = {
                 low_level_arrests_2021: util.parseFloat(row.low_level_arrests_2021, false, true),
                 low_level_arrests_2022: util.parseFloat(row.low_level_arrests_2022, false, true),
                 low_level_arrests_2023: util.parseFloat(row.low_level_arrests_2023, false, true),
+                low_level_arrests_2024: util.parseFloat(row.low_level_arrests_2024, false, true),
+                low_level_arrests_2025: util.parseFloat(row.low_level_arrests_2025, false, true),
                 native_american_arrests: util.parseInt(row.native_american_arrests, false, true),
                 black_low_level_arrest_rate: util.parseFloat(row.black_low_level_arrest_rate, false, true),
                 black_low_level_arrests: util.parseInt(row.black_low_level_arrests, false, true),

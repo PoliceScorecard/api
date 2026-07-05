@@ -305,7 +305,9 @@ module.exports = {
                 total_arrests_2020: 0,
                 total_arrests_2021: 0,
                 total_arrests_2022: 0,
-                total_arrests_2023: 0
+                total_arrests_2023: 0,
+                total_arrests_2024: 0,
+                total_arrests_2025: 0
               }
             }
 
@@ -386,6 +388,8 @@ module.exports = {
               arrests_2021: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.arrests_2021 : null,
               arrests_2022: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.arrests_2022 : null,
               arrests_2023: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.arrests_2023 : null,
+              arrests_2024: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.arrests_2024 : null,
+              arrests_2025: agency.dataValues.arrests ? agency.dataValues.arrests.dataValues.arrests_2025 : null,
 
               slug: agency.dataValues.slug,
               title: `${agency.dataValues.name}, ${stateDetails.name} ${util.titleCase(agency.dataValues.type, true)}`,
@@ -428,6 +432,8 @@ module.exports = {
             const currentArrests2021 = util.parseInt(cleanAgencies[key].arrests_2021, true) || 0
             const currentArrests2022 = util.parseInt(cleanAgencies[key].arrests_2022, true) || 0
             const currentArrests2023 = util.parseInt(cleanAgencies[key].arrests_2023, true) || 0
+            const currentArrests2024 = util.parseInt(cleanAgencies[key].arrests_2024, true) || 0
+            const currentArrests2025 = util.parseInt(cleanAgencies[key].arrests_2025, true) || 0
 
             cleanAgencies[key][type] = _.reverse(_.sortBy(cleanAgencies[key][type], ['population']))
             cleanAgencies[key].total_agencies = currentCount + cleanAgencies[key][type].length
@@ -460,6 +466,8 @@ module.exports = {
             cleanAgencies[key].total_arrests_2021 = currentArrests2021 + _.sumBy(cleanAgencies[key][type], 'arrests_2021')
             cleanAgencies[key].total_arrests_2022 = currentArrests2022 + _.sumBy(cleanAgencies[key][type], 'arrests_2022')
             cleanAgencies[key].total_arrests_2023 = currentArrests2023 + _.sumBy(cleanAgencies[key][type], 'arrests_2023')
+            cleanAgencies[key].total_arrests_2024 = currentArrests2024 + _.sumBy(cleanAgencies[key][type], 'arrests_2024')
+            cleanAgencies[key].total_arrests_2025 = currentArrests2025 + _.sumBy(cleanAgencies[key][type], 'arrests_2025')
           })
 
           const averageScore = Math.floor(cleanAgencies[key].total_overall_score / cleanAgencies[key].total_agencies)
