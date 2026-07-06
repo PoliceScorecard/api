@@ -2413,7 +2413,7 @@ module.exports = {
                 arrests_2021: util.parseInt(row.arrests_2021, false, true),
                 arrests_2022: util.parseInt(row.arrests_2022, false, true),
                 arrests_2023: util.parseInt(row.arrests_2023, false, true),
-                arrests_2024: util.parseInt(row.arrests_2025, false, true),
+                arrests_2024: util.parseInt(row.arrests_2024, false, true),
                 arrests_2025: util.parseInt(row.arrests_2025, false, true),
                 asian_pacific_arrests: util.parseInt(row.asian_pacific_arrests, false, true),
                 black_arrests: util.parseInt(row.black_arrests, false, true),
