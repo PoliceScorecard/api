@@ -388,6 +388,115 @@ const mockStates = [
   }
 ]
 
+const mockStatesWithStateSummary = [
+  {
+    dataValues: {
+      state_id: 35,
+      name: 'New York',
+      type: 'state',
+      total_population: 1000000,
+      white_population: 50,
+      black_population: 20,
+      hispanic_population: 30,
+      city: null,
+      county: null,
+      report: {
+        dataValues: {
+          overall_score: 40,
+          change_overall_score: 0,
+          total_people_killed: 36,
+          total_arrests: 130
+        }
+      },
+      arrests: {
+        dataValues: {
+          arrests_2013: 0,
+          arrests_2014: 0,
+          arrests_2015: 0,
+          arrests_2016: 0,
+          arrests_2017: 0,
+          arrests_2018: 0,
+          arrests_2019: 0,
+          arrests_2020: 0,
+          arrests_2021: 0,
+          arrests_2022: 0,
+          arrests_2023: 0,
+          arrests_2024: 50,
+          arrests_2025: 80,
+          low_level_arrests: 70,
+          violent_crime_arrests: 30
+        }
+      },
+      police_accountability: {
+        dataValues: {
+          civilian_complaints_reported: 40,
+          civilian_complaints_sustained: 8
+        }
+      },
+      police_violence: {
+        dataValues: {
+          black_people_killed: 20,
+          hispanic_people_killed: 6,
+          white_people_killed: 10
+        }
+      }
+    }
+  },
+  {
+    dataValues: {
+      state_id: 35,
+      name: 'Example Police Department',
+      type: 'police-department',
+      total_population: 9000000,
+      white_population: 10,
+      black_population: 80,
+      hispanic_population: 10,
+      city: null,
+      county: null,
+      report: {
+        dataValues: {
+          overall_score: 60,
+          change_overall_score: 0,
+          total_people_killed: 999,
+          total_arrests: 999
+        }
+      },
+      arrests: {
+        dataValues: {
+          arrests_2013: 999,
+          arrests_2014: 999,
+          arrests_2015: 999,
+          arrests_2016: 999,
+          arrests_2017: 999,
+          arrests_2018: 999,
+          arrests_2019: 999,
+          arrests_2020: 999,
+          arrests_2021: 999,
+          arrests_2022: 999,
+          arrests_2023: 999,
+          arrests_2024: 999,
+          arrests_2025: 999,
+          low_level_arrests: 999,
+          violent_crime_arrests: 999
+        }
+      },
+      police_accountability: {
+        dataValues: {
+          civilian_complaints_reported: 999,
+          civilian_complaints_sustained: 999
+        }
+      },
+      police_violence: {
+        dataValues: {
+          black_people_killed: 999,
+          hispanic_people_killed: 999,
+          white_people_killed: 999
+        }
+      }
+    }
+  }
+]
+
 const mockStateAgencies = [
   {
     dataValues: {
@@ -1057,6 +1166,39 @@ describe('Domain Scorecard', () => {
           assert.isDefined(results)
           done()
         })
+    })
+
+    it('should use state rows for national summary totals', (done) => {
+      this.scorecardAgencyStub.returns(Promise.resolve(mockStatesWithStateSummary))
+
+      ScorecardDomain.getStates()
+        .then((results) => {
+          const state = results.NY
+
+          assert.isDefined(state)
+          assert.strictEqual(state.total_arrests, 130)
+          assert.strictEqual(state.total_arrests_2024, 50)
+          assert.strictEqual(state.total_arrests_2025, 80)
+          assert.strictEqual(state.total_population, 1000000)
+          assert.strictEqual(state.total_black_population, 200000)
+          assert.strictEqual(state.total_hispanic_population, 300000)
+          assert.strictEqual(state.total_white_population, 500000)
+          assert.strictEqual(state.total_black_people_killed, 20)
+          assert.strictEqual(state.total_hispanic_people_killed, 6)
+          assert.strictEqual(state.total_white_people_killed, 10)
+          assert.strictEqual(state.total_complaints_reported, 40)
+          assert.strictEqual(state.total_complaints_sustained, 8)
+          assert.strictEqual(state.total_low_level_arrests, 70)
+          assert.strictEqual(state.total_violent_crime_arrests, 30)
+          assert.strictEqual(state.total_agencies, 1)
+          assert.strictEqual(state.total_overall_score, 60)
+          assert.strictEqual(state.average_score, 60)
+          assert.lengthOf(state['police-department'], 1)
+          assert.notProperty(state, 'state')
+          assert.notProperty(this.scorecardAgencyStub.firstCall.args[0], 'where')
+          done()
+        })
+        .catch(done)
     })
 
     it('should return empty result with missing agency report', (done) => {

@@ -135,6 +135,13 @@ const __buildGeoJSON = (result, collection) => {
   return geoJSON
 }
 
+const __getPopulationCount = (totalPopulation, percentage) => {
+  const population = util.parseInt(totalPopulation, true) || 0
+  const populationPercentage = util.parseFloat(percentage, true) || 0
+
+  return Math.round(population * populationPercentage / 100)
+}
+
 /**
  * Domain Scorecard
  * @type {object}
@@ -239,13 +246,7 @@ module.exports = {
    * Get US States and Support for Each
    */
   getStates () {
-    // Search Counties for Sheriff Department
     return models.scorecard_agency.findAll({
-      where: {
-        type: {
-          [Op.ne]: 'state'
-        }
-      },
       include: [
         'report',
         'city',
@@ -470,7 +471,45 @@ module.exports = {
             cleanAgencies[key].total_arrests_2025 = currentArrests2025 + _.sumBy(cleanAgencies[key][type], 'arrests_2025')
           })
 
-          const averageScore = Math.floor(cleanAgencies[key].total_overall_score / cleanAgencies[key].total_agencies)
+          const stateRows = cleanAgencies[key].state || []
+          const stateRow = stateRows[0]
+
+          if (stateRow) {
+            cleanAgencies[key].total_agencies -= stateRows.length
+            cleanAgencies[key].total_overall_score -= _.sumBy(stateRows, 'overall_score')
+            cleanAgencies[key].total_population = stateRow.population || 0
+            cleanAgencies[key].total_people_killed = stateRow.people_killed || 0
+            cleanAgencies[key].total_arrests = stateRow.arrests || 0
+            cleanAgencies[key].total_complaints_reported = stateRow.complaints_reported || 0
+            cleanAgencies[key].total_complaints_sustained = stateRow.complaints_sustained || 0
+            cleanAgencies[key].total_black_people_killed = stateRow.black_people_killed || 0
+            cleanAgencies[key].total_black_population = __getPopulationCount(stateRow.population, stateRow.black_population)
+            cleanAgencies[key].total_hispanic_people_killed = stateRow.hispanic_people_killed || 0
+            cleanAgencies[key].total_hispanic_population = __getPopulationCount(stateRow.population, stateRow.hispanic_population)
+            cleanAgencies[key].total_white_people_killed = stateRow.white_people_killed || 0
+            cleanAgencies[key].total_white_population = __getPopulationCount(stateRow.population, stateRow.white_population)
+            cleanAgencies[key].total_low_level_arrests = stateRow.low_level_arrests || 0
+            cleanAgencies[key].total_violent_crime_arrests = stateRow.violent_crime_arrests || 0
+            cleanAgencies[key].total_arrests_2013 = stateRow.arrests_2013 || 0
+            cleanAgencies[key].total_arrests_2014 = stateRow.arrests_2014 || 0
+            cleanAgencies[key].total_arrests_2015 = stateRow.arrests_2015 || 0
+            cleanAgencies[key].total_arrests_2016 = stateRow.arrests_2016 || 0
+            cleanAgencies[key].total_arrests_2017 = stateRow.arrests_2017 || 0
+            cleanAgencies[key].total_arrests_2018 = stateRow.arrests_2018 || 0
+            cleanAgencies[key].total_arrests_2019 = stateRow.arrests_2019 || 0
+            cleanAgencies[key].total_arrests_2020 = stateRow.arrests_2020 || 0
+            cleanAgencies[key].total_arrests_2021 = stateRow.arrests_2021 || 0
+            cleanAgencies[key].total_arrests_2022 = stateRow.arrests_2022 || 0
+            cleanAgencies[key].total_arrests_2023 = stateRow.arrests_2023 || 0
+            cleanAgencies[key].total_arrests_2024 = stateRow.arrests_2024 || 0
+            cleanAgencies[key].total_arrests_2025 = stateRow.arrests_2025 || 0
+
+            delete cleanAgencies[key].state
+          }
+
+          const averageScore = cleanAgencies[key].total_agencies > 0
+            ? Math.floor(cleanAgencies[key].total_overall_score / cleanAgencies[key].total_agencies)
+            : 0
           const averageGrade = util.getGrade(averageScore)
 
           cleanAgencies[key].average_score = averageScore
