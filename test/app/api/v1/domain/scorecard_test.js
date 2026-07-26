@@ -388,6 +388,115 @@ const mockStates = [
   }
 ]
 
+const mockStatesWithStateSummary = [
+  {
+    dataValues: {
+      state_id: 35,
+      name: 'New York',
+      type: 'state',
+      total_population: 1000000,
+      white_population: 50,
+      black_population: 20,
+      hispanic_population: 30,
+      city: null,
+      county: null,
+      report: {
+        dataValues: {
+          overall_score: 40,
+          change_overall_score: 0,
+          total_people_killed: 36,
+          total_arrests: 130
+        }
+      },
+      arrests: {
+        dataValues: {
+          arrests_2013: 0,
+          arrests_2014: 0,
+          arrests_2015: 0,
+          arrests_2016: 0,
+          arrests_2017: 0,
+          arrests_2018: 0,
+          arrests_2019: 0,
+          arrests_2020: 0,
+          arrests_2021: 0,
+          arrests_2022: 0,
+          arrests_2023: 0,
+          arrests_2024: 50,
+          arrests_2025: 80,
+          low_level_arrests: 70,
+          violent_crime_arrests: 30
+        }
+      },
+      police_accountability: {
+        dataValues: {
+          civilian_complaints_reported: 40,
+          civilian_complaints_sustained: 8
+        }
+      },
+      police_violence: {
+        dataValues: {
+          black_people_killed: 20,
+          hispanic_people_killed: 6,
+          white_people_killed: 10
+        }
+      }
+    }
+  },
+  {
+    dataValues: {
+      state_id: 35,
+      name: 'Example Police Department',
+      type: 'police-department',
+      total_population: 9000000,
+      white_population: 10,
+      black_population: 80,
+      hispanic_population: 10,
+      city: null,
+      county: null,
+      report: {
+        dataValues: {
+          overall_score: 60,
+          change_overall_score: 0,
+          total_people_killed: 999,
+          total_arrests: 999
+        }
+      },
+      arrests: {
+        dataValues: {
+          arrests_2013: 999,
+          arrests_2014: 999,
+          arrests_2015: 999,
+          arrests_2016: 999,
+          arrests_2017: 999,
+          arrests_2018: 999,
+          arrests_2019: 999,
+          arrests_2020: 999,
+          arrests_2021: 999,
+          arrests_2022: 999,
+          arrests_2023: 999,
+          arrests_2024: 999,
+          arrests_2025: 999,
+          low_level_arrests: 999,
+          violent_crime_arrests: 999
+        }
+      },
+      police_accountability: {
+        dataValues: {
+          civilian_complaints_reported: 999,
+          civilian_complaints_sustained: 999
+        }
+      },
+      police_violence: {
+        dataValues: {
+          black_people_killed: 999,
+          hispanic_people_killed: 999,
+          white_people_killed: 999
+        }
+      }
+    }
+  }
+]
+
 const mockStateAgencies = [
   {
     dataValues: {
@@ -652,6 +761,8 @@ const mockReport = {
       civilian_complaints_reported_2021: 123,
       civilian_complaints_reported_2022: 123,
       civilian_complaints_reported_2023: 123,
+      civilian_complaints_reported_2024: 123,
+      civilian_complaints_reported_2025: null,
       civilian_complaints_sustained: 343,
       civilian_complaints_sustained_2016: 123,
       civilian_complaints_sustained_2017: 123,
@@ -661,6 +772,8 @@ const mockReport = {
       civilian_complaints_sustained_2021: 123,
       civilian_complaints_sustained_2022: 123,
       civilian_complaints_sustained_2023: 123,
+      civilian_complaints_sustained_2024: 123,
+      civilian_complaints_sustained_2025: null,
       use_of_force_complaints_reported: 2339,
       use_of_force_complaints_reported_2016: 123,
       use_of_force_complaints_reported_2017: 123,
@@ -670,6 +783,8 @@ const mockReport = {
       use_of_force_complaints_reported_2021: 123,
       use_of_force_complaints_reported_2022: 123,
       use_of_force_complaints_reported_2023: 123,
+      use_of_force_complaints_reported_2024: 123,
+      use_of_force_complaints_reported_2025: null,
       use_of_force_complaints_sustained: 18,
       use_of_force_complaints_sustained_2016: 1,
       use_of_force_complaints_sustained_2017: 1,
@@ -679,6 +794,8 @@ const mockReport = {
       use_of_force_complaints_sustained_2021: 1,
       use_of_force_complaints_sustained_2022: 1,
       use_of_force_complaints_sustained_2023: 1,
+      use_of_force_complaints_sustained_2024: 1,
+      use_of_force_complaints_sustained_2025: null,
       discrimination_complaints_reported: 1425,
       discrimination_complaints_reported_2016: 123,
       discrimination_complaints_reported_2017: 123,
@@ -688,6 +805,8 @@ const mockReport = {
       discrimination_complaints_reported_2021: 123,
       discrimination_complaints_reported_2022: 123,
       discrimination_complaints_reported_2023: 123,
+      discrimination_complaints_reported_2024: 123,
+      discrimination_complaints_reported_2025: null,
       discrimination_complaints_sustained: 0,
       discrimination_complaints_sustained_2016: 0,
       discrimination_complaints_sustained_2017: 0,
@@ -697,6 +816,8 @@ const mockReport = {
       discrimination_complaints_sustained_2021: 0,
       discrimination_complaints_sustained_2022: 0,
       discrimination_complaints_sustained_2023: 0,
+      discrimination_complaints_sustained_2024: 0,
+      discrimination_complaints_sustained_2025: null,
       criminal_complaints_reported: 1434,
       criminal_complaints_reported_2016: 123,
       criminal_complaints_reported_2017: 123,
@@ -706,6 +827,8 @@ const mockReport = {
       criminal_complaints_reported_2021: 123,
       criminal_complaints_reported_2022: 123,
       criminal_complaints_reported_2023: 123,
+      criminal_complaints_reported_2024: 123,
+      criminal_complaints_reported_2025: null,
       criminal_complaints_sustained: 87,
       criminal_complaints_sustained_2016: 12,
       criminal_complaints_sustained_2017: 12,
@@ -715,6 +838,8 @@ const mockReport = {
       criminal_complaints_sustained_2021: 12,
       criminal_complaints_sustained_2022: 12,
       criminal_complaints_sustained_2023: 12,
+      criminal_complaints_sustained_2024: 12,
+      criminal_complaints_sustained_2025: null,
       complaints_in_detention_reported: 707,
       complaints_in_detention_reported_2016: 12,
       complaints_in_detention_reported_2017: 12,
@@ -724,6 +849,8 @@ const mockReport = {
       complaints_in_detention_reported_2021: 12,
       complaints_in_detention_reported_2022: 12,
       complaints_in_detention_reported_2023: 12,
+      complaints_in_detention_reported_2024: 12,
+      complaints_in_detention_reported_2025: null,
       complaints_in_detention_sustained: 33,
       complaints_in_detention_sustained_2016: 1,
       complaints_in_detention_sustained_2017: 1,
@@ -733,6 +860,8 @@ const mockReport = {
       complaints_in_detention_sustained_2021: 1,
       complaints_in_detention_sustained_2022: 1,
       complaints_in_detention_sustained_2023: 1,
+      complaints_in_detention_sustained_2024: 1,
+      complaints_in_detention_sustained_2025: null,
       created_date: '2020-03-30T04:35:09.000Z',
       modified_date: '2020-03-30T04:35:09.000Z',
       deletedAt: null
@@ -1037,6 +1166,39 @@ describe('Domain Scorecard', () => {
           assert.isDefined(results)
           done()
         })
+    })
+
+    it('should use state rows for national summary totals', (done) => {
+      this.scorecardAgencyStub.returns(Promise.resolve(mockStatesWithStateSummary))
+
+      ScorecardDomain.getStates()
+        .then((results) => {
+          const state = results.NY
+
+          assert.isDefined(state)
+          assert.strictEqual(state.total_arrests, 130)
+          assert.strictEqual(state.total_arrests_2024, 50)
+          assert.strictEqual(state.total_arrests_2025, 80)
+          assert.strictEqual(state.total_population, 1000000)
+          assert.strictEqual(state.total_black_population, 200000)
+          assert.strictEqual(state.total_hispanic_population, 300000)
+          assert.strictEqual(state.total_white_population, 500000)
+          assert.strictEqual(state.total_black_people_killed, 20)
+          assert.strictEqual(state.total_hispanic_people_killed, 6)
+          assert.strictEqual(state.total_white_people_killed, 10)
+          assert.strictEqual(state.total_complaints_reported, 40)
+          assert.strictEqual(state.total_complaints_sustained, 8)
+          assert.strictEqual(state.total_low_level_arrests, 70)
+          assert.strictEqual(state.total_violent_crime_arrests, 30)
+          assert.strictEqual(state.total_agencies, 1)
+          assert.strictEqual(state.total_overall_score, 60)
+          assert.strictEqual(state.average_score, 60)
+          assert.lengthOf(state['police-department'], 1)
+          assert.notProperty(state, 'state')
+          assert.notProperty(this.scorecardAgencyStub.firstCall.args[0], 'where')
+          done()
+        })
+        .catch(done)
     })
 
     it('should return empty result with missing agency report', (done) => {
